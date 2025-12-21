@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منيو مطعم مارينا</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0a2942 0%, #1a5f7a 50%, #0a2942 100%);
+            color: #f5f5f5;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(41, 128, 185, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .menu-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 45px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 30px;
+        }
+        
+        .restaurant-name {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3498db, #5dade2, #85c1e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #85c1e9;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        .section-title {
+            font-size: 2.1em;
+            font-weight: 700;
+            color: #5dade2;
+            margin-bottom: 25px;
+            padding: 12px 0;
+            border-right: 6px solid #3498db;
+            padding-right: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 15px;
+            border-bottom: 1px solid rgba(52, 152, 219, 0.25);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item:hover {
+            background: rgba(52, 152, 219, 0.15);
+            transform: translateX(-5px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+        
+        .item-name {
+            font-size: 1.35em;
+            font-weight: 600;
+            color: #f5f5f5;
+            flex: 1;
+        }
+        
+        .item-description {
+            font-size: 0.95em;
+            color: #b8d4e8;
+            margin-top: 6px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .item-price {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #5dade2;
+            margin-right: 25px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .special-badge {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            margin-right: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(231, 76, 60, 0.4);
+        }
+        
+        .category-icon {
+            font-size: 1.4em;
+            margin-left: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(52, 152, 219, 0.4);
+            color: #b8d4e8;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <h1 class="restaurant-name">⚓ MARINA ⚓</h1>
+            <p class="subtitle">مأكولات بحرية طازجة من المحيط إلى مائدتك</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🦐</span>المقبلات البحرية</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        جمبري محمر
+                    </div>
+                    <div class="item-description">جمبري مقلي بالزبدة والثوم مع صوص خاص</div>
+                </div>
+                <div class="item-price">8,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        حلقات الكلماري المقرمشة
+                    </div>
+                    <div class="item-description">حلقات كلماري مقلية مع صوص التارتار</div>
+                </div>
+                <div class="item-price">7,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        صحن المأكولات البحرية المشكلة
+                    </div>
+                    <div class="item-description">جمبري، كلماري، سمك مقلي مع الخضار</div>
+                </div>
+                <div class="item-price">12,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سمك فيليه مقلي
+                    </div>
+                    <div class="item-description">شرائح فيليه السمك المقرمشة</div>
+                </div>
+                <div class="item-price">6,500 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🐟</span>السمك المشوي</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        <span class="special-badge">مميز</span>
+                        سمك مسگوف عراقي
+                    </div>
+                    <div class="item-description">سمك كارب طازج مشوي على الفحم بالطريقة العراقية الأصيلة</div>
+                </div>
+                <div class="item-price">18,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سمك شعري مشوي
+                    </div>
+                    <div class="item-description">سمك شعري كامل مشوي مع الليمون والبهارات</div>
+                </div>
+                <div class="item-price">15,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سمك سلطان إبراهيم مشوي
+                    </div>
+                    <div class="item-description">سمك سلطان إبراهيم طازج مشوي</div>
+                </div>
+                <div class="item-price">16,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سمك هامور مشوي
+                    </div>
+                    <div class="item-description">شرائح هامور طازج مع الخضار المشوية</div>
+                </div>
+                <div class="item-price">20,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سلمون مشوي
+                    </div>
+                    <div class="item-description">فيليه سلمون نرويجي مع صوص الليمون</div>
+                </div>
+                <div class="item-price">22,000 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🍤</span>أطباق الجمبري</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        جمبري مشوي جامبو
+                    </div>
+                    <div class="item-description">جمبري حجم كبير مشوي بالثوم والبقدونس</div>
+                </div>
+                <div class="item-price">25,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        جمبري بالكاري
+                    </div>
+                    <div class="item-description">جمبري مطبوخ بصوص الكاري الكريمي</div>
+                </div>
+                <div class="item-price">18,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        جمبري تمبورا يابانية
+                    </div>
+                    <div class="item-description">جمبري مقلي بعجينة يابانية خفيفة</div>
+                </div>
+                <div class="item-price">16,000 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🍚</span>أطباق الأرز البحري</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        <span class="special-badge">طبق اليوم</span>
+                        صيادية سمك
+                    </div>
+                    <div class="item-description">أرز مع السمك والبصل المكرمل على الطريقة الساحلية</div>
+                </div>
+                <div class="item-price">14,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        برياني جمبري
+                    </div>
+                    <div class="item-description">أرز بسمتي مع الجمبري والبهارات الهندية</div>
+                </div>
+                <div class="item-price">16,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        أرز بالمأكولات البحرية
+                    </div>
+                    <div class="item-description">أرز مع جمبري، كلماري، سمك وخضار</div>
+                </div>
+                <div class="item-price">15,000 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🥘</span>الشوربات البحرية</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        شوربة مأكولات بحرية
+                    </div>
+                    <div class="item-description">شوربة غنية بالجمبري والسمك والكلماري</div>
+                </div>
+                <div class="item-price">7,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        شوربة سمك عراقية
+                    </div>
+                    <div class="item-description">شوربة سمك تقليدية بالكركم والبهارات</div>
+                </div>
+                <div class="item-price">6,000 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🥗</span>السلطات</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سلطة بحرية
+                    </div>
+                    <div class="item-description">جمبري، كلماري، خضار طازجة مع صوص الليمون</div>
+                </div>
+                <div class="item-price">8,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        سلطة خضراء مشكلة
+                    </div>
+                    <div class="item-description">خضار طازجة متنوعة مع الزيتون</div>
+                </div>
+                <div class="item-price">3,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">
+                        فتوش
+                    </div>
+                    <div class="item-description">سلطة لبنانية مع الخبز المحمص</div>
+                </div>
+                <div class="item-price">3,500 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🍹</span>المشروبات</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">عصير ليمون بالنعناع طازج</div>
+                </div>
+                <div class="item-price">2,500 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">موهيتو (بدون كحول)</div>
+                </div>
+                <div class="item-price">3,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">عصائر طبيعية طازجة</div>
+                </div>
+                <div class="item-price">2,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">مشروبات غازية</div>
+                </div>
+                <div class="item-price">1,500 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">شاي عراقي</div>
+                </div>
+                <div class="item-price">1,000 د.ع</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span class="category-icon">🍰</span>الحلويات</h2>
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">بقلاوة بالفستق</div>
+                </div>
+                <div class="item-price">4,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">كنافة بالقشطة</div>
+                </div>
+                <div class="item-price">5,000 د.ع</div>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <div class="item-name">آيس كريم</div>
+                </div>
+                <div class="item-price">3,000 د.ع</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🌊 أسماكنا طازجة يومياً من الخليج 🌊</p>
+            <p>جميع أطباقنا تُحضّر طازجة عند الطلب</p>
+            <p>جميع الأسعار بالدينار العراقي</p>
+        </div>
+    </div>
+</body>
+</html>
