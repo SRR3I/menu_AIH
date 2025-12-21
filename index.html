@@ -1,411 +1,0 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منيو مطعم أرز لبنان</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
-            color: #f5f5f5;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        
-        .menu-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 3px solid #d4af37;
-            padding-bottom: 30px;
-        }
-        
-        .restaurant-name {
-            font-size: 3em;
-            font-weight: 700;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            color: #c9a961;
-            font-weight: 400;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: #d4af37;
-            margin-bottom: 20px;
-            padding: 10px 0;
-            border-right: 5px solid #d4af37;
-            padding-right: 15px;
-        }
-        
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .menu-item:hover {
-            background: rgba(212, 175, 55, 0.1);
-            padding-right: 10px;
-            border-radius: 8px;
-        }
-        
-        .item-name {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #f5f5f5;
-            flex: 1;
-        }
-        
-        .item-description {
-            font-size: 0.9em;
-            color: #b8b8b8;
-            margin-top: 5px;
-            font-weight: 400;
-        }
-        
-        .item-price {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #d4af37;
-            margin-right: 20px;
-        }
-        
-        .flag {
-            font-size: 0.9em;
-            padding: 3px 8px;
-            border-radius: 5px;
-            margin-right: 10px;
-            font-weight: 600;
-        }
-        
-        .iraqi {
-            background: rgba(206, 17, 38, 0.3);
-            color: #ff5566;
-        }
-        
-        .lebanese {
-            background: rgba(237, 28, 36, 0.3);
-            color: #ff6b7a;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid rgba(212, 175, 55, 0.3);
-            color: #b8b8b8;
-        }
-    </style>
-</head>
-<body>
-    <div class="menu-container">
-        <div class="header">
-            <h1 class="restaurant-name">🍚 أرز لبنان 🍚</h1>
-            <p class="subtitle">المطبخ العراقي واللبناني الأصيل</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">المقبلات الباردة</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        حمص بالطحينة
-                    </div>
-                    <div class="item-description">حمص مهروس مع الطحينة وزيت الزيتون والليمون</div>
-                </div>
-                <div class="item-price">3,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        متبل بابا غنوج
-                    </div>
-                    <div class="item-description">باذنجان مشوي مع الطحينة والثوم</div>
-                </div>
-                <div class="item-price">3,500 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        تبولة لبنانية
-                    </div>
-                    <div class="item-description">بقدونس، برغل، طماطم، بصل أخضر مع الليمون</div>
-                </div>
-                <div class="item-price">3,500 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        فتوش
-                    </div>
-                    <div class="item-description">سلطة خضار مع خبز محمص ودبس الرمان</div>
-                </div>
-                <div class="item-price">3,000 د.ع</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">المقبلات الساخنة</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        سمبوسة عراقية
-                    </div>
-                    <div class="item-description">معجنات محشية باللحم أو الخضار</div>
-                </div>
-                <div class="item-price">4,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        كبة مقلية
-                    </div>
-                <div class="item-description">برغل محشي باللحم المفروم والبصل</div>
-                </div>
-                <div class="item-price">5,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        فلافل
-                    </div>
-                    <div class="item-description">أقراص الحمص المقلية مع الطحينة</div>
-                </div>
-                <div class="item-price">2,500 د.ع</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">الأطباق الرئيسية</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        برياني عراقي
-                    </div>
-                    <div class="item-description">أرز بسمتي مع لحم الغنم والبهارات الخاصة</div>
-                </div>
-                <div class="item-price">12,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        تمن بقلاوة (برياني سمك)
-                    </div>
-                    <div class="item-description">أرز مع سمك مسقوف على الطريقة العراقية</div>
-                </div>
-                <div class="item-price">15,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        دولمة عراقية
-                    </div>
-                    <div class="item-description">ورق عنب وباذنجان وكوسا محشية بالأرز واللحم</div>
-                </div>
-                <div class="item-price">10,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        باچة عراقية
-                    </div>
-                    <div class="item-description">شوربة الكوارع والرأس التقليدية</div>
-                </div>
-                <div class="item-price">8,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        مجدرة لبنانية
-                    </div>
-                    <div class="item-description">أرز مع عدس وبصل محمر</div>
-                </div>
-                <div class="item-price">6,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        كفتة بالصينية
-                    </div>
-                    <div class="item-description">كفتة لحم مع طماطم وبصل بالفرن</div>
-                </div>
-                <div class="item-price">11,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        شاورما لحم / دجاج
-                    </div>
-                    <div class="item-description">لحم أو دجاج مع الثوم والطحينة</div>
-                </div>
-                <div class="item-price">7,000 د.ع</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">المشاوي</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        تكة لحم عراقية
-                    </div>
-                    <div class="item-description">قطع لحم غنم مشوية مع البهارات</div>
-                </div>
-                <div class="item-price">14,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        مشاوي مشكلة
-                    </div>
-                    <div class="item-description">كباب، شيش طاووق، كفتة، تكة لحم</div>
-                </div>
-                <div class="item-price">16,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        سمك مسگوف
-                    </div>
-                    <div class="item-description">سمك كارب مشوي على الطريقة العراقية الأصيلة</div>
-                </div>
-                <div class="item-price">18,000 د.ع</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">الحلويات</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        بقلاوة لبنانية
-                    </div>
-                    <div class="item-description">معجنات بالفستق والقطر</div>
-                </div>
-                <div class="item-price">4,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag iraqi">🇮🇶</span>
-                        زنود الست
-                    </div>
-                    <div class="item-description">معجنات محشية بالقشطة</div>
-                </div>
-                <div class="item-price">3,500 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="flag lebanese">🇱🇧</span>
-                        كنافة نابلسية
-                    </div>
-                    <div class="item-description">كنافة بالجبن والقطر</div>
-                </div>
-                <div class="item-price">5,000 د.ع</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">المشروبات</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">شاي عراقي بالهيل</div>
-                </div>
-                <div class="item-price">1,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">عصير ليمون بالنعناع</div>
-                </div>
-                <div class="item-price">2,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">جلاب</div>
-                </div>
-                <div class="item-price">2,500 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">عيران (شنينة)</div>
-                </div>
-                <div class="item-price">1,500 د.ع</div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>🌟 نستخدم أجود المكونات الطازجة 🌟</p>
-            <p>جميع الأسعار بالدينار العراقي</p>
-        </div>
-    </div>
-</body>
-</html>
