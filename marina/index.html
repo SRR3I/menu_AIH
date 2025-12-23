@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منيو مطعم مارينا</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
         
         * {
             margin: 0;
@@ -14,10 +14,10 @@
         }
         
         body {
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #0a2942 0%, #1a5f7a 50%, #0a2942 100%);
-            color: #f5f5f5;
-            padding: 20px;
+            font-family: 'Tajawal', sans-serif;
+            background: #0a0e1a;
+            color: #ffffff;
+            padding: 0;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
@@ -31,422 +31,574 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(41, 128, 185, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
             pointer-events: none;
-            z-index: 0;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .restaurant-name {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #10b981, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.3));
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.3)); }
+            50% { filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.5)); }
+        }
+        
+        .subtitle {
+            font-size: 0.95em;
+            color: #a0aec0;
+            font-weight: 500;
+            letter-spacing: 2px;
         }
         
         .menu-container {
-            max-width: 950px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 45px;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            max-width: 100%;
+            padding: 20px 15px;
             position: relative;
             z-index: 1;
         }
         
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 30px;
-        }
-        
-        .restaurant-name {
-            font-size: 3.5em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #3498db, #5dade2, #85c1e9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-        
-        .subtitle {
-            font-size: 1.3em;
-            color: #85c1e9;
-            font-weight: 400;
-            font-style: italic;
-        }
-        
         .section {
-            margin-bottom: 45px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.2);
         }
         
         .section-title {
-            font-size: 2.1em;
+            font-size: 1.3em;
             font-weight: 700;
-            color: #5dade2;
-            margin-bottom: 25px;
-            padding: 12px 0;
-            border-right: 6px solid #3498db;
-            padding-right: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: white;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .section-title:active::before {
+            opacity: 1;
+        }
+        
+        .section-title-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .toggle-icon {
+            font-size: 1em;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title.active .toggle-icon {
+            transform: rotate(180deg);
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.7));
+        }
+        
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-content.active {
+            max-height: 3000px;
         }
         
         .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 15px;
-            border-bottom: 1px solid rgba(52, 152, 219, 0.25);
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
-            border-radius: 10px;
-            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #10b981, #3b82f6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .menu-item:hover::before {
+            opacity: 1;
         }
         
         .menu-item:hover {
-            background: rgba(52, 152, 219, 0.15);
-            transform: translateX(-5px);
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+            background: rgba(16, 185, 129, 0.05);
+            padding-right: 25px;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
         }
         
         .item-name {
-            font-size: 1.35em;
+            font-size: 1.15em;
             font-weight: 600;
-            color: #f5f5f5;
+            color: #ffffff;
             flex: 1;
-        }
-        
-        .item-description {
-            font-size: 0.95em;
-            color: #b8d4e8;
-            margin-top: 6px;
-            font-weight: 400;
             line-height: 1.5;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
         
         .item-price {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 700;
-            color: #5dade2;
-            margin-right: 25px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
+        }
+        
+        .item-description {
+            font-size: 0.9em;
+            color: #a0aec0;
+            line-height: 1.6;
         }
         
         .special-badge {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #ef4444, #dc2626);
             color: white;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75em;
-            margin-right: 10px;
-            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.7em;
+            display: inline-block;
+            margin-bottom: 8px;
+            font-weight: 700;
             text-transform: uppercase;
-            box-shadow: 0 2px 6px rgba(231, 76, 60, 0.4);
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+            animation: pulse 2s ease-in-out infinite;
         }
         
-        .category-icon {
-            font-size: 1.4em;
-            margin-left: 10px;
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.6); }
         }
         
         .footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 2px solid rgba(52, 152, 219, 0.4);
-            color: #b8d4e8;
+            padding: 30px 20px;
+            color: #a0aec0;
+            font-size: 0.9em;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .footer p {
             margin: 8px 0;
-            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        
+        .category-icon {
+            font-size: 1.4em;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+        }
+        
+        @media (max-width: 480px) {
+            .restaurant-name {
+                font-size: 2em;
+            }
+            .section-title {
+                font-size: 1.2em;
+                padding: 16px 18px;
+            }
+            .menu-item {
+                padding: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="menu-container">
-        <div class="header">
-            <h1 class="restaurant-name">⚓ MARINA ⚓</h1>
-            <p class="subtitle">مأكولات بحرية طازجة من المحيط إلى مائدتك</p>
-        </div>
+    <div class="header">
+        <h1 class="restaurant-name">⚓ MARINA ⚓</h1>
+        <p class="subtitle">مأكولات بحرية طازجة</p>
+    </div>
 
+    <div class="menu-container">
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🦐</span>المقبلات البحرية</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        جمبري محمر
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🦐</span>
+                    المقبلات البحرية
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">جمبري محمر</div>
+                        <div class="item-price">8,000 د.ع</div>
                     </div>
                     <div class="item-description">جمبري مقلي بالزبدة والثوم مع صوص خاص</div>
                 </div>
-                <div class="item-price">8,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        حلقات الكلماري المقرمشة
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">حلقات الكلماري المقرمشة</div>
+                        <div class="item-price">7,000 د.ع</div>
                     </div>
                     <div class="item-description">حلقات كلماري مقلية مع صوص التارتار</div>
                 </div>
-                <div class="item-price">7,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        صحن المأكولات البحرية المشكلة
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">صحن المأكولات البحرية المشكلة</div>
+                        <div class="item-price">12,000 د.ع</div>
                     </div>
                     <div class="item-description">جمبري، كلماري، سمك مقلي مع الخضار</div>
                 </div>
-                <div class="item-price">12,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سمك فيليه مقلي
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سمك فيليه مقلي</div>
+                        <div class="item-price">6,500 د.ع</div>
                     </div>
                     <div class="item-description">شرائح فيليه السمك المقرمشة</div>
                 </div>
-                <div class="item-price">6,500 د.ع</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🐟</span>السمك المشوي</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="special-badge">مميز</span>
-                        سمك مسگوف عراقي
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🐟</span>
+                    السمك المشوي
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <span class="special-badge">مميز</span>
+                    <div class="item-header">
+                        <div class="item-name">سمك مسگوف عراقي</div>
+                        <div class="item-price">18,000 د.ع</div>
                     </div>
                     <div class="item-description">سمك كارب طازج مشوي على الفحم بالطريقة العراقية الأصيلة</div>
                 </div>
-                <div class="item-price">18,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سمك شعري مشوي
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سمك شعري مشوي</div>
+                        <div class="item-price">15,000 د.ع</div>
                     </div>
                     <div class="item-description">سمك شعري كامل مشوي مع الليمون والبهارات</div>
                 </div>
-                <div class="item-price">15,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سمك سلطان إبراهيم مشوي
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سمك سلطان إبراهيم مشوي</div>
+                        <div class="item-price">16,000 د.ع</div>
                     </div>
                     <div class="item-description">سمك سلطان إبراهيم طازج مشوي</div>
                 </div>
-                <div class="item-price">16,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سمك هامور مشوي
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سمك هامور مشوي</div>
+                        <div class="item-price">20,000 د.ع</div>
                     </div>
                     <div class="item-description">شرائح هامور طازج مع الخضار المشوية</div>
                 </div>
-                <div class="item-price">20,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سلمون مشوي
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سلمون مشوي</div>
+                        <div class="item-price">22,000 د.ع</div>
                     </div>
                     <div class="item-description">فيليه سلمون نرويجي مع صوص الليمون</div>
                 </div>
-                <div class="item-price">22,000 د.ع</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🍤</span>أطباق الجمبري</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        جمبري مشوي جامبو
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🍤</span>
+                    أطباق الجمبري
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">جمبري مشوي جامبو</div>
+                        <div class="item-price">25,000 د.ع</div>
                     </div>
                     <div class="item-description">جمبري حجم كبير مشوي بالثوم والبقدونس</div>
                 </div>
-                <div class="item-price">25,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        جمبري بالكاري
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">جمبري بالكاري</div>
+                        <div class="item-price">18,000 د.ع</div>
                     </div>
                     <div class="item-description">جمبري مطبوخ بصوص الكاري الكريمي</div>
                 </div>
-                <div class="item-price">18,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        جمبري تمبورا يابانية
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">جمبري تمبورا يابانية</div>
+                        <div class="item-price">16,000 د.ع</div>
                     </div>
                     <div class="item-description">جمبري مقلي بعجينة يابانية خفيفة</div>
                 </div>
-                <div class="item-price">16,000 د.ع</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🍚</span>أطباق الأرز البحري</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        <span class="special-badge">طبق اليوم</span>
-                        صيادية سمك
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🍚</span>
+                    أطباق الأرز البحري
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <span class="special-badge">طبق اليوم</span>
+                    <div class="item-header">
+                        <div class="item-name">صيادية سمك</div>
+                        <div class="item-price">14,000 د.ع</div>
                     </div>
                     <div class="item-description">أرز مع السمك والبصل المكرمل على الطريقة الساحلية</div>
                 </div>
-                <div class="item-price">14,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        برياني جمبري
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">برياني جمبري</div>
+                        <div class="item-price">16,000 د.ع</div>
                     </div>
                     <div class="item-description">أرز بسمتي مع الجمبري والبهارات الهندية</div>
                 </div>
-                <div class="item-price">16,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        أرز بالمأكولات البحرية
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">أرز بالمأكولات البحرية</div>
+                        <div class="item-price">15,000 د.ع</div>
                     </div>
                     <div class="item-description">أرز مع جمبري، كلماري، سمك وخضار</div>
                 </div>
-                <div class="item-price">15,000 د.ع</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🥘</span>الشوربات البحرية</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        شوربة مأكولات بحرية
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🥘</span>
+                    الشوربات البحرية
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">شوربة مأكولات بحرية</div>
+                        <div class="item-price">7,000 د.ع</div>
                     </div>
                     <div class="item-description">شوربة غنية بالجمبري والسمك والكلماري</div>
                 </div>
-                <div class="item-price">7,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        شوربة سمك عراقية
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">شوربة سمك عراقية</div>
+                        <div class="item-price">6,000 د.ع</div>
                     </div>
                     <div class="item-description">شوربة سمك تقليدية بالكركم والبهارات</div>
                 </div>
-                <div class="item-price">6,000 د.ع</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🥗</span>السلطات</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سلطة بحرية
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🥗</span>
+                    السلطات
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سلطة بحرية</div>
+                        <div class="item-price">8,000 د.ع</div>
                     </div>
                     <div class="item-description">جمبري، كلماري، خضار طازجة مع صوص الليمون</div>
                 </div>
-                <div class="item-price">8,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        سلطة خضراء مشكلة
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">سلطة خضراء مشكلة</div>
+                        <div class="item-price">3,000 د.ع</div>
                     </div>
                     <div class="item-description">خضار طازجة متنوعة مع الزيتون</div>
                 </div>
-                <div class="item-price">3,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">
-                        فتوش
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">فتوش</div>
+                        <div class="item-price">3,500 د.ع</div>
                     </div>
                     <div class="item-description">سلطة لبنانية مع الخبز المحمص</div>
                 </div>
-                <div class="item-price">3,500 د.ع</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🍹</span>المشروبات</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">عصير ليمون بالنعناع طازج</div>
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🍹</span>
+                    المشروبات
                 </div>
-                <div class="item-price">2,500 د.ع</div>
+                <span class="toggle-icon">▼</span>
             </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">موهيتو (بدون كحول)</div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">عصير ليمون بالنعناع طازج</div>
+                        <div class="item-price">2,500 د.ع</div>
+                    </div>
                 </div>
-                <div class="item-price">3,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">عصائر طبيعية طازجة</div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">موهيتو (بدون كحول)</div>
+                        <div class="item-price">3,000 د.ع</div>
+                    </div>
                 </div>
-                <div class="item-price">2,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">مشروبات غازية</div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">عصائر طبيعية طازجة</div>
+                        <div class="item-price">2,000 د.ع</div>
+                    </div>
                 </div>
-                <div class="item-price">1,500 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">شاي عراقي</div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">مشروبات غازية</div>
+                        <div class="item-price">1,500 د.ع</div>
+                    </div>
                 </div>
-                <div class="item-price">1,000 د.ع</div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">شاي عراقي</div>
+                        <div class="item-price">1,000 د.ع</div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title"><span class="category-icon">🍰</span>الحلويات</h2>
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">بقلاوة بالفستق</div>
+            <div class="section-title" onclick="toggleSection(this)">
+                <div class="section-title-text">
+                    <span class="category-icon">🍰</span>
+                    الحلويات
                 </div>
-                <div class="item-price">4,000 د.ع</div>
+                <span class="toggle-icon">▼</span>
             </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">كنافة بالقشطة</div>
+            <div class="section-content">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">بقلاوة بالفستق</div>
+                        <div class="item-price">4,000 د.ع</div>
+                    </div>
                 </div>
-                <div class="item-price">5,000 د.ع</div>
-            </div>
-            
-            <div class="menu-item">
-                <div>
-                    <div class="item-name">آيس كريم</div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">كنافة بالقشطة</div>
+                        <div class="item-price">5,000 د.ع</div>
+                    </div>
                 </div>
-                <div class="item-price">3,000 د.ع</div>
+                
+                <div class="menu-item">
+                    <div class="item-header">
+                        <div class="item-name">آيس كريم</div>
+                        <div class="item-price">3,000 د.ع</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -456,5 +608,24 @@
             <p>جميع الأسعار بالدينار العراقي</p>
         </div>
     </div>
+
+    <script>
+        function toggleSection(element) {
+            const content = element.nextElementSibling;
+            const isActive = content.classList.contains('active');
+            
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.section-title').forEach(title => {
+                title.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                content.classList.add('active');
+                element.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
