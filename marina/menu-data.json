@@ -4,7 +4,7 @@
       "subtitle": "تجربة طعام فاخرة",
       "footer1": "جميع أطباقنا تُحضّر طازجة عند الطلب",
       "footer2": "جميع الأسعار بالدينار العراقي",
-      "footer3": "فندق الانبار الدولي"
+      "footer3": "فندق الأنبار الدولي"
     },
     "en": {
       "subtitle": "Premium Dining Experience",
@@ -13,105 +13,121 @@
       "footer3": "Al Anbar International Hotel"
     }
   },
+  "tabs": {
+    "ar": [
+      { "id": "food", "name": "🍽️ الأطعمة" },
+      { "id": "drinks", "name": "☕ المشروبات" },
+      { "id": "shisha", "name": "🍃 الأراكيل" }
+    ],
+    "en": [
+      { "id": "food", "name": "🍽️ Food" },
+      { "id": "drinks", "name": "☕ Beverages" },
+      { "id": "shisha", "name": "🍃 Shisha" }
+    ]
+  },
   "menu": {
     "ar": [
       {
+        "tab": "food",
         "title": "شوربات",
-        "icon": "🍽️",
+        "icon": "🍵",
         "items": [
           {
             "name": "شوربة عدس",
-            "desc": "عدس و توست مشوي و ليمون",
+            "desc": "عدس وتوست مشوي وليمون",
             "price": "2,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
             "name": "شوربة فطر",
-            "desc": "فطر و كريمة طبخ و بصل و توست مشوي",
+            "desc": "فطر وكريمة طبخ وبصل وتوست مشوي",
             "price": "3,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           }
         ]
       },
       {
+        "tab": "food",
         "title": "سلطات",
         "icon": "🥗",
         "items": [
           {
             "name": "سلطة يونانية",
-            "desc": "خس و جبن فيتا و طماطم و زيتون",
+            "desc": "خس وجبن فيتا وطماطم وزيتون",
             "price": "5,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/1.jpeg"
           },
           {
             "name": "سلطة جرجير",
-            "desc": "جرجير و سماق و دبس رمان",
+            "desc": "جرجير وسماق ودبس رمان",
             "price": "4,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/2.jpeg"
           },
           {
             "name": "سلطة فتوش",
-            "desc": "خيار و طماطم و بصل و فجل و خبز مقلي",
+            "desc": "خيار وطماطم وبصل وفجل وخبز مقلي",
             "price": "5,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/3.jpeg"
           },
           {
             "name": "سلطة تبولة",
-            "desc": "معدنوس و ليمون و طماطم",
+            "desc": "معدنوس وليمون وطماطم",
             "price": "5,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/4.jpeg"
           },
           {
             "name": "سلطة سيزر مع دجاج",
-            "desc": "خس و دجاج مشوي و صلصة سيزر و جبن",
+            "desc": "خس ودجاج مشوي وصلصة سيزر وجبن",
             "price": "7,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/5.jpeg"
           }
         ]
       },
       {
+        "tab": "food",
         "title": "مقبلات باردة",
-        "icon": "🍽️",
+        "icon": "🥙",
         "items": [
           {
             "name": "حمص",
-            "desc": "حمص و طحينة وزيت زيتون",
+            "desc": "حمص وطحينة وزيت زيتون",
             "price": "3,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/1.jpeg"
           },
           {
             "name": "راهب",
-            "desc": "باذنجان مشوي و فلفل اللوان و زيت زيتون",
+            "desc": "باذنجان مشوي وفلفل الألوان وزيت زيتون",
             "price": "2,500 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/3.jpeg"
           },
           {
             "name": "متبل",
-            "desc": "باذنجان مشوي و طحينة و لبن",
+            "desc": "باذنجان مشوي وطحينة ولبن",
             "price": "3,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/2.jpeg"
           },
           {
             "name": "يالنجي",
-            "desc": "ورق عنب حشوة خضر و رز",
+            "desc": "ورق عنب حشوة خضر ورز",
             "price": "2,500 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/4.jpeg"
           },
           {
             "name": "محمرة",
-            "desc": "فلفل بارد و جوز و زيت زيتون",
+            "desc": "فلفل بارد وجوز وزيت زيتون",
             "price": "3,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           }
         ]
       },
       {
+        "tab": "food",
         "title": "مشاوي",
         "icon": "🔥",
         "items": [
           {
             "name": "طبق مشاوي مارينا",
-            "desc": "كباب لحم2 كباب دجاج2 تكة لحم2 تكة دجاج2 ضلوع4 عرايس1 اجنحة",
+            "desc": "كباب لحم2 كباب دجاج2 تكة لحم2 تكة دجاج2 ضلوع4 عرايس1 أجنحة",
             "price": "60,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/1.jpeg"
           },
@@ -123,7 +139,7 @@
           },
           {
             "name": "ضلوع",
-            "desc": "ضلوع غنم مشوي مع طماطم مشوية وبصل مشوي",
+            "desc": "ضلوع غنم مشوية مع طماطم مشوية وبصل مشوي",
             "price": "20,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/3.jpeg"
           },
@@ -146,14 +162,14 @@
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/6.jpeg"
           },
           {
-            "name": "اجنحة",
-            "desc": "اجنحة مشوية مع فنكر وصلصة ثومية",
+            "name": "أجنحة",
+            "desc": "أجنحة مشوية مع فنكر وصلصة ثومية",
             "price": "12,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/7.jpeg"
           },
           {
-            "name": "طاوق",
-            "desc": "طاوق مشوي 3 شيش مع فنكر وصلصة ثومية",
+            "name": "طاووق",
+            "desc": "طاووق مشوي 3 شيش مع فنكر وصلصة ثومية",
             "price": "14,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/8.PNG"
           },
@@ -166,54 +182,56 @@
         ]
       },
       {
+        "tab": "food",
         "title": "باستا",
         "icon": "🍝",
         "items": [
           {
-            "name": "فوتوشيني الفريدو",
-            "desc": "باستا و صلصة كريمة و صدر دجاج مشوي",
+            "name": "فوتشيني ألفريدو",
+            "desc": "باستا وصلصة كريمة وصدر دجاج مشوي",
             "price": "8,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/1.jpeg"
           },
           {
-            "name": "بني بيستو",
+            "name": "بيني بيستو",
             "desc": "معكرونة مع صلصة البيستو بالريحان",
             "price": "6,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/2.jpeg"
           },
           {
-            "name": "سباكتي بولونيز",
-            "desc": "اسباغتي مع صلصلة طماطم ولحم مثروم",
+            "name": "سباغيتي بولونيز",
+            "desc": "إسباغيتي مع صلصة طماطم ولحم مفروم",
             "price": "10,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/3.jpeg"
           },
           {
-            "name": "فوتوشيني سي فود",
-            "desc": "باستا مع صلبصة كوكتيل وقطع بحريات مشكل",
+            "name": "فوتشيني سي فود",
+            "desc": "باستا مع صلصة كوكتيل وقطع بحرية مشكلة",
             "price": "10,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/4.jpeg"
           }
         ]
       },
       {
+        "tab": "food",
         "title": "مقبلات ساخنة",
-        "icon": "🔥",
+        "icon": "🍤",
         "items": [
           {
-            "name": "روبيان دايمنت",
-            "desc": "روبيان مع صلصة الداينمت و فنكر",
+            "name": "روبيان دايناميت",
+            "desc": "روبيان مع صلصة الدايناميت وفنكر",
             "price": "7,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%B3%D8%A7%D8%AE%D9%86%D8%A9/1.jpeg"
           },
           {
-            "name": "اجنحة بروفنسال",
-            "desc": "اجنحة دجاج مع صلصة الليمون والزيت والثوم",
+            "name": "أجنحة بروفنسال",
+            "desc": "أجنحة دجاج مع صلصة الليمون والزيت والثوم",
             "price": "6,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%B3%D8%A7%D8%AE%D9%86%D8%A9/2.jpeg"
           },
           {
             "name": "كبدة دجاج",
-            "desc": "كبدة دجاج بالدبس الرمان",
+            "desc": "كبدة دجاج بدبس الرمان",
             "price": "4,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%B3%D8%A7%D8%AE%D9%86%D8%A9/3.jpeg"
           },
@@ -231,115 +249,118 @@
           },
           {
             "name": "بطاطا مقلية",
-            "desc": "بطاطا اصابع مقلية مع صلصة كاتشب",
+            "desc": "بطاطا أصابع مقلية مع صلصة كاتشب",
             "price": "2,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
             "name": "روبيان باني",
-            "desc": "روبيان مقرمش مع صلصة و بطاطا مقلية",
+            "desc": "روبيان مقرمش مع صلصة وبطاطا مقلية",
             "price": "10,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           }
         ]
       },
       {
-        "title": "الاطباق الرئيسية",
+        "tab": "food",
+        "title": "الأطباق الرئيسية",
         "icon": "🍖",
         "items": [
           {
             "name": "طبق مارينا",
-            "desc": "شرحة لحم مع صلصة و صلصة ديمي كلاس وخضار وبطاطا مهروسة",
+            "desc": "شريحة لحم مع صلصة ديمي كلاس وخضار وبطاطا مهروسة",
             "price": "18,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/1.jpeg"
           },
           {
             "name": "ستيك لحم",
-            "desc": "شرحات لحم مع صلصة وخضار وبطاطا مهروسة",
+            "desc": "شرائح لحم مع صلصة وخضار وبطاطا مهروسة",
             "price": "18,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/2.jpeg"
           },
           {
             "name": "ستيك دجاج",
-            "desc": "شرحات دجاج مشوية مع صلصة و خضار وبطاطا مهروسة",
+            "desc": "شرائح دجاج مشوية مع صلصة وخضار وبطاطا مهروسة",
             "price": "12,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/3.jpeg"
           },
           {
-            "name": "شرحات دجاج بالكاري",
-            "desc": "شرحات دجاج مشوية مع صلصة الكاري والخضار ورز مسلوق",
+            "name": "شرائح دجاج بالكاري",
+            "desc": "شرائح دجاج مشوية مع صلصة الكاري والخضار ورز مسلوق",
             "price": "8,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/4.jpeg"
           },
           {
             "name": "سكالوب دجاج",
-            "desc": "صدر دجاج مقرمش ومقلي مع فنكر و 3 صلصات",
+            "desc": "صدر دجاج مقرمش ومقلي مع فنكر و3 صلصات",
             "price": "8,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/5.jpeg"
           },
           {
             "name": "فاهيتا دجاج",
-            "desc": "صدر دجاج مقطع مع فلفل اللوان و بصل و فطر وجبنة مع 3 صلصات",
+            "desc": "صدر دجاج مقطع مع فلفل الألوان وبصل وفطر وجبنة مع 3 صلصات",
             "price": "10,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/6.jpeg"
           },
           {
             "name": "فاهيتا لحم",
-            "desc": "لحم مقطع مع فلفل اللوان و بصل و فطر وجبنة مع 3 صلصات",
+            "desc": "لحم مقطع مع فلفل الألوان وبصل وفطر وجبنة مع 3 صلصات",
             "price": "14,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/7.jpeg"
           },
           {
-            "name": "ستراغنوف لحم",
-            "desc": "لحم مقطع مع صلصة كريمة وفلفل اللوان وفطر ورز مسلوق",
+            "name": "ستراغونوف لحم",
+            "desc": "لحم مقطع مع صلصة كريمة وفلفل الألوان وفطر ورز مسلوق",
             "price": "18,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/8.jpeg"
           },
           {
             "name": "وجبة أطفال",
-            "desc": "صدر دجاج مقرمش 3 قطع مع فنكر و 3 صلصات",
+            "desc": "صدر دجاج مقرمش 3 قطع مع فنكر و3 صلصات",
             "price": "6,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/9.jpeg"
           }
         ]
       },
       {
+        "tab": "food",
         "title": "سناك",
         "icon": "🍔",
         "items": [
           {
             "name": "فاهيتا دجاج",
-            "desc": "صدر دجاج مقطع مع فلفل اللوان و بصل و فطر وجبنة مع صلصة",
+            "desc": "صدر دجاج مقطع مع فلفل الألوان وبصل وفطر وجبنة مع صلصة",
             "price": "6,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
             "name": "فاهيتا لحم",
-            "desc": "لحم مقطع مع فلفل اللوان و بصل و فطر وجبنة مع صلصة",
+            "desc": "لحم مقطع مع فلفل الألوان وبصل وفطر وجبنة مع صلصة",
             "price": "8,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
-            "name": "بركر لحم",
+            "name": "برجر لحم",
             "desc": "لحم عراقي 150غ مع خس وطماطم وفنكر وصلصة",
             "price": "8,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
-            "name": "بركر دجاج",
-            "desc": "دجاج 150 غ مع خس وطماطم ومخلل وفنكر وصلصة",
+            "name": "برجر دجاج",
+            "desc": "دجاج 150غ مع خس وطماطم ومخلل وفنكر وصلصة",
             "price": "6,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
             "name": "كرسبي",
-            "desc": "صدر دجاج مقرمش مع خس و طماطم وفنكر وصلصة",
+            "desc": "صدر دجاج مقرمش مع خس وطماطم وفنكر وصلصة",
             "price": "6,000 د.ع",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           }
         ]
       },
       {
+        "tab": "food",
         "title": "بيتزا",
         "icon": "🍕",
         "items": [
@@ -350,20 +371,20 @@
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/1.jpeg"
           },
           {
-            "name": "ماركريتا",
+            "name": "مارجريتا",
             "desc": "صلصة طماطم وجبنة",
             "price": "8,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/2.jpeg"
           },
           {
             "name": "خضار",
-            "desc": "صلصة طماطم وفلفل اللوان وذرة وزيتون وطماطم وجبنة",
+            "desc": "صلصة طماطم وفلفل الألوان وذرة وزيتون وطماطم وجبنة",
             "price": "8,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/3.jpeg"
           },
           {
             "name": "ببروني",
-            "desc": "صلصة طماطم و لحم بقري مع جبنة",
+            "desc": "صلصة طماطم ولحم بقري مع جبنة",
             "price": "10,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/4.jpeg"
           },
@@ -375,15 +396,16 @@
           },
           {
             "name": "لحم",
-            "desc": "صلصة طماطم ولحم مقطع و ذرة و جبنة",
+            "desc": "صلصة طماطم ولحم مقطع وذرة وجبنة",
             "price": "12,000 د.ع",
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/6.jpeg"
           }
         ]
       },
       {
+        "tab": "drinks",
         "title": "مشروبات",
-        "icon": "🍹",
+        "icon": "🥤",
         "items": [
           {
             "name": "ماء صغير",
@@ -412,6 +434,7 @@
         ]
       },
       {
+        "tab": "drinks",
         "title": "مشروبات ساخنة",
         "icon": "☕",
         "items": [
@@ -420,15 +443,15 @@
             "price": "3,000 د.ع"
           },
           {
-            "name": "اسبريسو دبل",
+            "name": "إسبريسو دبل",
             "price": "5,000 د.ع"
           },
           {
-            "name": "اسبريسو سنكل",
+            "name": "إسبريسو سنجل",
             "price": "3,000 د.ع"
           },
           {
-            "name": "امريكانو",
+            "name": "أمريكانو",
             "price": "5,000 د.ع"
           },
           {
@@ -482,6 +505,7 @@
         ]
       },
       {
+        "tab": "drinks",
         "title": "مشروبات باردة",
         "icon": "🧊",
         "items": [
@@ -490,53 +514,54 @@
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس لاتيه",
+            "name": "آيس لاتيه",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس لاتيه عسل",
+            "name": "آيس لاتيه عسل",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس لاتيه فانيلا",
+            "name": "آيس لاتيه فانيلا",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس لاتيه بندق",
+            "name": "آيس لاتيه بندق",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس موكا دارك",
+            "name": "آيس موكا دارك",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس لاتيه كرميل",
+            "name": "آيس لاتيه كراميل",
             "price": "5,000 د.ع"
           },
           {
-            "name": "سبانش ايس لاتيه",
+            "name": "سبانش آيس لاتيه",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس وايت موكا",
+            "name": "آيس وايت موكا",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس شيكن لوتس",
+            "name": "آيس شيك لوتس",
             "price": "5,000 د.ع"
           },
           {
-            "name": "ايس امريكانو",
+            "name": "آيس أمريكانو",
             "price": "5,000 د.ع"
           }
         ]
       },
       {
+        "tab": "drinks",
         "title": "عصائر فريش",
         "icon": "🍊",
         "items": [
           {
-            "name": "انناس",
+            "name": "أناناس",
             "price": "5,000 د.ع"
           },
           {
@@ -556,7 +581,7 @@
             "price": "5,000 د.ع"
           },
           {
-            "name": "مانكو",
+            "name": "مانجو",
             "price": "5,000 د.ع"
           },
           {
@@ -566,11 +591,12 @@
         ]
       },
       {
+        "tab": "drinks",
         "title": "ميلك شيك",
         "icon": "🥤",
         "items": [
           {
-            "name": "ميلك شيك اوريو",
+            "name": "ميلك شيك أوريو",
             "price": "6,000 د.ع"
           },
           {
@@ -588,15 +614,16 @@
         ]
       },
       {
+        "tab": "drinks",
         "title": "موهيتو",
         "icon": "🍹",
         "items": [
           {
-            "name": "موهيتو كلاسك",
+            "name": "موهيتو كلاسيك",
             "price": "5,000 د.ع"
           },
           {
-            "name": "موهيتو انناس",
+            "name": "موهيتو أناناس",
             "price": "5,000 د.ع"
           },
           {
@@ -612,12 +639,13 @@
             "price": "5,000 د.ع"
           },
           {
-            "name": "موهيتو كرينادين",
+            "name": "موهيتو جرينادين",
             "price": "5,000 د.ع"
           }
         ]
       },
       {
+        "tab": "drinks",
         "title": "سموذي",
         "icon": "🍓",
         "items": [
@@ -626,7 +654,7 @@
             "price": "5,000 د.ع"
           },
           {
-            "name": "سموذي انناس ومانكو",
+            "name": "سموذي أناناس ومانجو",
             "price": "5,000 د.ع"
           },
           {
@@ -634,7 +662,7 @@
             "price": "5,000 د.ع"
           },
           {
-            "name": "سموذي مانكو",
+            "name": "سموذي مانجو",
             "price": "5,000 د.ع"
           },
           {
@@ -646,21 +674,22 @@
             "price": "5,000 د.ع"
           },
           {
-            "name": "سموذي برتقال وانناس",
+            "name": "سموذي برتقال وأناناس",
             "price": "5,000 د.ع"
           }
         ]
       },
       {
+        "tab": "drinks",
         "title": "كوكتيل",
-        "icon": "🍹",
+        "icon": "🥭",
         "items": [
           {
             "name": "كوكتيل فواكه فريش",
             "price": "5,000 د.ع"
           },
           {
-            "name": "كوكتيل موز وفرولة",
+            "name": "كوكتيل موز وفراولة",
             "price": "5,000 د.ع"
           },
           {
@@ -684,17 +713,18 @@
             "price": "7,000 د.ع"
           },
           {
-            "name": "كوكتيل افوكادو بالمكسرات",
+            "name": "كوكتيل أفوكادو بالمكسرات",
             "price": "7,000 د.ع"
           }
         ]
       },
       {
-        "title": "اراكيل",
+        "tab": "shisha",
+        "title": "أراكيل",
         "icon": "🍃",
         "items": [
           {
-            "name": "إنكليزي",
+            "name": "إنجليزي",
             "price": "10,000 د.ع"
           },
           {
@@ -730,20 +760,732 @@
     ],
     "en": [
       {
+        "tab": "food",
         "title": "Soups",
-        "icon": "🍽️",
+        "icon": "🍵",
         "items": [
           {
             "name": "Lentil Soup",
             "desc": "Lentils, toasted bread & lemon",
             "price": "2,000 IQD",
-            "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400"
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
           },
           {
             "name": "Mushroom Soup",
             "desc": "Mushrooms, cream, onions & toasted bread",
             "price": "3,000 IQD",
-            "img": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400"
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Salads",
+        "icon": "🥗",
+        "items": [
+          {
+            "name": "Greek Salad",
+            "desc": "Lettuce, feta cheese, tomatoes & olives",
+            "price": "5,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/1.jpeg"
+          },
+          {
+            "name": "Arugula Salad",
+            "desc": "Arugula, sumac & pomegranate molasses",
+            "price": "4,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/2.jpeg"
+          },
+          {
+            "name": "Fattoush Salad",
+            "desc": "Cucumber, tomatoes, onions, radish & fried bread",
+            "price": "5,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/3.jpeg"
+          },
+          {
+            "name": "Tabbouleh Salad",
+            "desc": "Parsley, lemon & tomatoes",
+            "price": "5,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/4.jpeg"
+          },
+          {
+            "name": "Caesar Salad with Chicken",
+            "desc": "Lettuce, grilled chicken, caesar dressing & cheese",
+            "price": "7,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%B3%D9%84%D8%B7%D8%A7%D8%AA/5.jpeg"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Cold Appetizers",
+        "icon": "🥙",
+        "items": [
+          {
+            "name": "Hummus",
+            "desc": "Chickpeas, tahini & olive oil",
+            "price": "3,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/1.jpeg"
+          },
+          {
+            "name": "Raheb",
+            "desc": "Grilled eggplant, bell peppers & olive oil",
+            "price": "2,500 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/3.jpeg"
+          },
+          {
+            "name": "Mutabbal",
+            "desc": "Grilled eggplant, tahini & yogurt",
+            "price": "3,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/2.jpeg"
+          },
+          {
+            "name": "Yalanji",
+            "desc": "Grape leaves stuffed with vegetables & rice",
+            "price": "2,500 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%AF%D8%A9/4.jpeg"
+          },
+          {
+            "name": "Muhammara",
+            "desc": "Red pepper, walnuts & olive oil",
+            "price": "3,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Grills",
+        "icon": "🔥",
+        "items": [
+          {
+            "name": "Marina Mixed Grill Platter",
+            "desc": "Meat kebab 2, chicken kebab 2, meat tikka 2, chicken tikka 2, ribs 4, arayes 1, wings",
+            "price": "60,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/1.jpeg"
+          },
+          {
+            "name": "Meat Arayes",
+            "desc": "Iraqi bread stuffed with meat & grilled on charcoal",
+            "price": "8,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/2.jpeg"
+          },
+          {
+            "name": "Lamb Ribs",
+            "desc": "Grilled lamb ribs with grilled tomatoes & onions",
+            "price": "20,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/3.jpeg"
+          },
+          {
+            "name": "Meat Kebab",
+            "desc": "Grilled lamb kebab with grilled tomatoes & onions",
+            "price": "20,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/4.jpeg"
+          },
+          {
+            "name": "Chicken Kebab",
+            "desc": "Chicken kebab 3 skewers with fries, garlic sauce, grilled tomatoes & onions",
+            "price": "14,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/5.jpeg"
+          },
+          {
+            "name": "Mixed Grill",
+            "desc": "Meat kebab 1, chicken kebab 1, meat tikka 1, chicken tikka 1 with fries & garlic sauce",
+            "price": "24,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/6.jpeg"
+          },
+          {
+            "name": "Chicken Wings",
+            "desc": "Grilled wings with fries & garlic sauce",
+            "price": "12,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/7.jpeg"
+          },
+          {
+            "name": "Tawouk",
+            "desc": "Grilled tawouk 3 skewers with fries & garlic sauce",
+            "price": "14,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/8.PNG"
+          },
+          {
+            "name": "Meat Tikka",
+            "desc": "Grilled lamb 3 skewers with fries, grilled tomatoes & onions",
+            "price": "20,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/9.PNG"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Pasta",
+        "icon": "🍝",
+        "items": [
+          {
+            "name": "Fettuccine Alfredo",
+            "desc": "Pasta with cream sauce & grilled chicken breast",
+            "price": "8,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/1.jpeg"
+          },
+          {
+            "name": "Penne Pesto",
+            "desc": "Pasta with basil pesto sauce",
+            "price": "6,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/2.jpeg"
+          },
+          {
+            "name": "Spaghetti Bolognese",
+            "desc": "Spaghetti with tomato sauce & ground meat",
+            "price": "10,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/3.jpeg"
+          },
+          {
+            "name": "Fettuccine Seafood",
+            "desc": "Pasta with cocktail sauce & mixed seafood",
+            "price": "10,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7/4.jpeg"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Hot Appetizers",
+        "icon": "🍤",
+        "items": [
+          {
+            "name": "Dynamite Shrimp",
+            "desc": "Shrimp with dynamite sauce & fries",
+            "price": "7,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%B3%D8%A7%D8%AE%D9%86%D8%A9/1.jpeg"
+          },
+          {
+            "name": "Provencal Wings",
+            "desc": "Chicken wings with lemon, oil & garlic sauce",
+            "price": "6,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%B3%D8%A7%D8%AE%D9%86%D8%A9/2.jpeg"
+          },
+          {
+            "name": "Chicken Liver",
+            "desc": "Chicken liver with pomegranate molasses",
+            "price": "4,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D9%82%D8%A8%D9%84%D8%A7%D8%AA%20%D8%B3%D8%A7%D8%AE%D9%86%D8%A9/3.jpeg"
+          },
+          {
+            "name": "Hummus with Meat",
+            "desc": "Hummus with tahini & diced lamb meat",
+            "price": "5,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "Spicy Potatoes",
+            "desc": "French fries with spicy sauce",
+            "price": "2,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "French Fries",
+            "desc": "Fried potato fingers with ketchup sauce",
+            "price": "2,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "Breaded Shrimp",
+            "desc": "Crispy shrimp with sauce & french fries",
+            "price": "10,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Main Dishes",
+        "icon": "🍖",
+        "items": [
+          {
+            "name": "Marina Platter",
+            "desc": "Meat steak with demi-glace sauce, vegetables & mashed potatoes",
+            "price": "18,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/1.jpeg"
+          },
+          {
+            "name": "Beef Steak",
+            "desc": "Beef steaks with sauce, vegetables & mashed potatoes",
+            "price": "18,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/2.jpeg"
+          },
+          {
+            "name": "Chicken Steak",
+            "desc": "Grilled chicken steaks with sauce, vegetables & mashed potatoes",
+            "price": "12,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/3.jpeg"
+          },
+          {
+            "name": "Chicken Curry",
+            "desc": "Grilled chicken steaks with curry sauce, vegetables & steamed rice",
+            "price": "8,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/4.jpeg"
+          },
+          {
+            "name": "Chicken Scalope",
+            "desc": "Crispy fried chicken breast with fries & 3 sauces",
+            "price": "8,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/5.jpeg"
+          },
+          {
+            "name": "Chicken Fajita",
+            "desc": "Diced chicken breast with bell peppers, onions, mushrooms & cheese with 3 sauces",
+            "price": "10,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/6.jpeg"
+          },
+          {
+            "name": "Beef Fajita",
+            "desc": "Diced beef with bell peppers, onions, mushrooms & cheese with 3 sauces",
+            "price": "14,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/7.jpeg"
+          },
+          {
+            "name": "Beef Stroganoff",
+            "desc": "Diced beef with cream sauce, bell peppers, mushrooms & steamed rice",
+            "price": "18,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/8.jpeg"
+          },
+          {
+            "name": "Kids Meal",
+            "desc": "Crispy chicken breast 3 pieces with fries & 3 sauces",
+            "price": "6,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A7%D8%B7%D8%A8%D8%A7%D9%82%20%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/9.jpeg"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Snacks",
+        "icon": "🍔",
+        "items": [
+          {
+            "name": "Chicken Fajita Wrap",
+            "desc": "Diced chicken breast with bell peppers, onions, mushrooms & cheese with sauce",
+            "price": "6,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "Beef Fajita Wrap",
+            "desc": "Diced beef with bell peppers, onions, mushrooms & cheese with sauce",
+            "price": "8,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "Beef Burger",
+            "desc": "Iraqi beef 150g with lettuce, tomatoes, fries & sauce",
+            "price": "8,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "Chicken Burger",
+            "desc": "Chicken 150g with lettuce, tomatoes, pickles, fries & sauce",
+            "price": "6,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          },
+          {
+            "name": "Crispy Chicken Sandwich",
+            "desc": "Crispy chicken breast with lettuce, tomatoes, fries & sauce",
+            "price": "6,000 IQD",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ9_KHgdA7Dip_b-Hz3t7qxDzDr2VDgVrA&s"
+          }
+        ]
+      },
+      {
+        "tab": "food",
+        "title": "Pizza",
+        "icon": "🍕",
+        "items": [
+          {
+            "name": "Marina Pizza",
+            "desc": "Tomato sauce with turkey, chicken, salami & cheese",
+            "price": "14,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/1.jpeg"
+          },
+          {
+            "name": "Margherita",
+            "desc": "Tomato sauce & cheese",
+            "price": "8,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/2.jpeg"
+          },
+          {
+            "name": "Vegetable Pizza",
+            "desc": "Tomato sauce, bell peppers, corn, olives, tomatoes & cheese",
+            "price": "8,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/3.jpeg"
+          },
+          {
+            "name": "Pepperoni Pizza",
+            "desc": "Tomato sauce, beef pepperoni & cheese",
+            "price": "10,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/4.jpeg"
+          },
+          {
+            "name": "Chicken Pizza",
+            "desc": "Tomato sauce, diced chicken breast, corn & cheese",
+            "price": "10,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/5.jpeg"
+          },
+          {
+            "name": "Beef Pizza",
+            "desc": "Tomato sauce, diced beef, corn & cheese",
+            "price": "12,000 IQD",
+            "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7/6.jpeg"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Beverages",
+        "icon": "🥤",
+        "items": [
+          {
+            "name": "Small Water",
+            "price": "500 IQD"
+          },
+          {
+            "name": "Large Water",
+            "price": "1,500 IQD"
+          },
+          {
+            "name": "Soft Drink",
+            "price": "1,000 IQD"
+          },
+          {
+            "name": "Sparkling Water",
+            "price": "1,000 IQD"
+          },
+          {
+            "name": "Yogurt Drink",
+            "price": "2,000 IQD"
+          },
+          {
+            "name": "Red Bull",
+            "price": "2,500 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Hot Beverages",
+        "icon": "☕",
+        "items": [
+          {
+            "name": "Nescafe",
+            "price": "3,000 IQD"
+          },
+          {
+            "name": "Double Espresso",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Single Espresso",
+            "price": "3,000 IQD"
+          },
+          {
+            "name": "Americano",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Turkish Coffee",
+            "price": "3,000 IQD"
+          },
+          {
+            "name": "Latte",
+            "price": "3,000 IQD"
+          },
+          {
+            "name": "Tea",
+            "price": "1,000 IQD"
+          },
+          {
+            "name": "White Mocha Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mocha Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Caramel Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Vanilla Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Honey Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Hazelnut Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Frappe",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Spanish Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mocha Cream Frappe",
+            "price": "5,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Cold Beverages",
+        "icon": "🧊",
+        "items": [
+          {
+            "name": "Cheesecake",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Iced Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Honey Iced Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Vanilla Iced Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Hazelnut Iced Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Dark Mocha Ice",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Caramel Iced Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Spanish Iced Latte",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "White Mocha Ice",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Lotus Iced Shake",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Iced Americano",
+            "price": "5,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Fresh Juices",
+        "icon": "🍊",
+        "items": [
+          {
+            "name": "Pineapple",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Orange",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Pomegranate",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Lemon Mint",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Strawberry",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mango",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Lemonade",
+            "price": "4,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Milkshakes",
+        "icon": "🥤",
+        "items": [
+          {
+            "name": "Oreo Milkshake",
+            "price": "6,000 IQD"
+          },
+          {
+            "name": "Cheesecake Milkshake",
+            "price": "6,000 IQD"
+          },
+          {
+            "name": "Mocha Milkshake",
+            "price": "6,000 IQD"
+          },
+          {
+            "name": "Milkshake",
+            "price": "6,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Mojito",
+        "icon": "🍹",
+        "items": [
+          {
+            "name": "Classic Mojito",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Pineapple Mojito",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Blue Mojito",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Strawberry Mojito",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mixed Berry Mojito",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Grenadine Mojito",
+            "price": "5,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Smoothies",
+        "icon": "🍓",
+        "items": [
+          {
+            "name": "Strawberry Smoothie",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Pineapple Mango Smoothie",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mixed Berry Smoothie",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mango Smoothie",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Peach Smoothie",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Kiwi Blueberry Smoothie",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Orange Pineapple Smoothie",
+            "price": "5,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "drinks",
+        "title": "Cocktails",
+        "icon": "🥭",
+        "items": [
+          {
+            "name": "Fresh Fruit Cocktail",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Banana Strawberry Cocktail",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Milk Banana Cocktail",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Nuts & Honey Cocktail",
+            "price": "7,000 IQD"
+          },
+          {
+            "name": "Strawberry Milk Cocktail",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Banana Milk Chocolate Cocktail",
+            "price": "5,000 IQD"
+          },
+          {
+            "name": "Mixed Berry Nuts Cocktail",
+            "price": "7,000 IQD"
+          },
+          {
+            "name": "Avocado Nuts Cocktail",
+            "price": "7,000 IQD"
+          }
+        ]
+      },
+      {
+        "tab": "shisha",
+        "title": "Shisha",
+        "icon": "🍃",
+        "items": [
+          {
+            "name": "English",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Double Apple",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Grape",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Grape Mint",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Lemon Mint",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Citrus",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Gum Mint",
+            "price": "10,000 IQD"
+          },
+          {
+            "name": "Special",
+            "price": "10,000 IQD"
           }
         ]
       }

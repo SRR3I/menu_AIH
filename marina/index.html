@@ -33,15 +33,8 @@
         }
 
         @keyframes gradientShift {
-
-            0%,
-            100% {
-                opacity: 1
-            }
-
-            50% {
-                opacity: .8
-            }
+            0%, 100% { opacity: 1 }
+            50% { opacity: .8 }
         }
 
         .header {
@@ -61,33 +54,38 @@
             top: 15px;
             left: 20px;
             display: flex;
-            gap: 8px;
-            z-index: 101
+            gap: 6px;
+            z-index: 101;
+            background: rgba(10, 14, 26, 0.6);
+            padding: 4px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .15);
+            backdrop-filter: blur(10px);
         }
 
         .lang-btn {
-            background: rgba(255, 255, 255, .1);
-            border: 1px solid rgba(255, 255, 255, .2);
+            background: transparent;
+            border: none;
             color: #a0aec0;
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 8px;
-            font-size: .85em;
+            font-size: .9em;
             font-weight: 600;
             cursor: pointer;
-            transition: all .3s;
-            backdrop-filter: blur(10px)
+            transition: all .3s ease;
+            position: relative;
         }
 
         .lang-btn.active {
             background: linear-gradient(135deg, #10b981, #3b82f6);
             color: #fff;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, .4)
+            box-shadow: 0 4px 12px rgba(16, 185, 129, .4);
+            transform: translateY(-1px);
         }
 
         .lang-btn:hover:not(.active) {
-            background: rgba(255, 255, 255, .15);
-            border-color: rgba(16, 185, 129, .4)
+            background: rgba(255, 255, 255, .08);
+            color: #fff;
         }
 
         .restaurant-name {
@@ -103,15 +101,8 @@
         }
 
         @keyframes shimmer {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 20px rgba(16, 185, 129, .3))
-            }
-
-            50% {
-                filter: drop-shadow(0 0 30px rgba(59, 130, 246, .5))
-            }
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(16, 185, 129, .3)) }
+            50% { filter: drop-shadow(0 0 30px rgba(59, 130, 246, .5)) }
         }
 
         .subtitle {
@@ -121,10 +112,77 @@
             letter-spacing: 2px
         }
 
+        /* Menu Tabs */
+        .menu-tabs {
+            display: flex;
+            gap: 10px;
+            padding: 20px 15px 10px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .menu-tabs::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .menu-tabs::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .menu-tabs::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border-radius: 10px;
+        }
+
+        .tab-btn {
+            flex-shrink: 0;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 12px;
+            color: #a0aec0;
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all .3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(16, 185, 129, .2), rgba(59, 130, 246, .2));
+            border-color: rgba(16, 185, 129, .4);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, .3);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .05));
+            border-color: rgba(16, 185, 129, .2);
+            color: #fff;
+        }
+
         .menu-container {
-            padding: 20px 15px;
+            padding: 10px 15px 20px;
             position: relative;
             z-index: 1
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section {
@@ -191,7 +249,7 @@
         .section-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height .5s cubic-bezier(.4, 0, .2, 1)
+            transition: max-height .4s cubic-bezier(.4, 0, .2, 1)
         }
 
         .section-content.active {
@@ -458,8 +516,13 @@
             }
 
             .lang-btn {
-                padding: 6px 12px;
-                font-size: .8em
+                padding: 6px 14px;
+                font-size: .85em
+            }
+
+            .tab-btn {
+                padding: 10px 20px;
+                font-size: 0.95em;
             }
         }
     </style>
@@ -474,12 +537,16 @@
         <h1 class="restaurant-name">MARINA MENU</h1>
         <p class="subtitle" data-tr="subtitle">تجربة طعام فاخرة</p>
     </div>
+
+    <div class="menu-tabs" id="menuTabs"></div>
     <div class="menu-container" id="menuContainer"></div>
+
     <div class="footer">
         <p data-tr="footer1">جميع أطباقنا تُحضّر طازجة عند الطلب</p>
         <p data-tr="footer2">جميع الأسعار بالدينار العراقي</p>
-        <p data-tr="footer3">فندق الانبار الدولي</p>
+        <p data-tr="footer3">فندق الأنبار الدولي</p>
     </div>
+
     <div class="modal" id="imageModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -493,8 +560,8 @@
             </div>
         </div>
     </div>
+
     <script>
-        // تحميل البيانات من ملف JSON
         let menuData = null;
 
         fetch('menu-data.json')
@@ -508,8 +575,15 @@
                 alert('خطأ في تحميل بيانات المنيو');
             });
 
-        let L = 'ar', s = 1, tx = 0, ty = 0, drag = false, sx, sy, td = 0;
-        const e = e => document.getElementById(e), mc = e('menuContainer'), mo = e('imageModal'), mi = e('modalImage'), mt = e('modalTitle'), md = e('modalDescription'), mp = e('modalPrice');
+        let L = 'ar', s = 1, tx = 0, ty = 0, drag = false, sx, sy, td = 0, currentTab = 'food';
+        const e = e => document.getElementById(e), 
+              mc = e('menuContainer'), 
+              mo = e('imageModal'), 
+              mi = e('modalImage'), 
+              mt = e('modalTitle'), 
+              md = e('modalDescription'), 
+              mp = e('modalPrice'),
+              mtabs = e('menuTabs');
 
         function init() {
             document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => {
@@ -518,47 +592,197 @@
                 b.classList.add('active');
                 document.documentElement.setAttribute('lang', L);
                 document.documentElement.setAttribute('dir', L === 'ar' ? 'rtl' : 'ltr');
+                renderTabs();
                 r();
                 u();
             }));
 
+            renderTabs();
             r();
         }
 
-        function u() { document.querySelectorAll('[data-tr]').forEach(e => { e.textContent = menuData.translations[L][e.dataset.tr] }) }
+        function renderTabs() {
+            const tabs = menuData.tabs[L];
+            mtabs.innerHTML = tabs.map((tab, idx) => 
+                `<button class="tab-btn ${idx === 0 ? 'active' : ''}" data-tab="${tab.id}">${tab.name}</button>`
+            ).join('');
 
-        function r() {
-            mc.innerHTML = menuData.menu[L].map((c, i) => `<div class="section"><div class="section-title" onclick="t(this)"><div class="section-title-text"><span class="category-icon">${c.icon}</span>${c.title}</div><span class="toggle-icon">▼</span></div><div class="section-content">${c.items.map((x, j) => `<div class="menu-item">${x.img ? `<div class="item-image-wrapper" onclick="o('${c.title}',${i},${j})"><img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy"></div>` : ''}
-<div class="item-content"><div class="item-header"><div class="item-name">${x.name}</div><div class="item-price">${x.price}</div></div>${x.desc ? `<div class="item-description">${x.desc}</div>` : ''}</div></div>`).join('')}</div></div>`).join('')
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentTab = btn.dataset.tab;
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    const targetContent = document.querySelector(`[data-tab-content="${currentTab}"]`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
         }
 
-        function t(e) { const c = e.nextElementSibling, a = c.classList.contains('active'); document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active')); document.querySelectorAll('.section-title').forEach(t => t.classList.remove('active')); if (!a) { c.classList.add('active'); e.classList.add('active') } }
+        function u() { 
+            document.querySelectorAll('[data-tr]').forEach(e => { 
+                e.textContent = menuData.translations[L][e.dataset.tr] 
+            }) 
+        }
 
-        function o(t, i, j) { const x = menuData.menu[L][i].items[j]; if (!x.img) return; mi.onload = () => { mo.classList.add('active'); document.body.style.overflow = 'hidden' }; mi.src = x.img; mt.textContent = x.name; md.textContent = x.desc || ''; mp.textContent = x.price; z() }
+        function r() {
+            const tabs = menuData.tabs[L];
+            mc.innerHTML = tabs.map((tab, tabIdx) => `
+                <div class="tab-content ${tabIdx === 0 ? 'active' : ''}" data-tab-content="${tab.id}">
+                    ${menuData.menu[L].filter(c => c.tab === tab.id).map((c, i) => `
+                        <div class="section">
+                            <div class="section-title" onclick="t(event, this)">
+                                <div class="section-title-text">
+                                    <span class="category-icon">${c.icon}</span>${c.title}
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div class="section-content">
+                                ${c.items.map((x, j) => `
+                                    <div class="menu-item">
+                                        ${x.img ? `<div class="item-image-wrapper" onclick="o('${c.title}',${i},${j},'${tab.id}')">
+                                            <img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy">
+                                        </div>` : ''}
+                                        <div class="item-content">
+                                            <div class="item-header">
+                                                <div class="item-name">${x.name}</div>
+                                                <div class="item-price">${x.price}</div>
+                                            </div>
+                                            ${x.desc ? `<div class="item-description">${x.desc}</div>` : ''}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
 
-        function c() { mo.classList.remove('active'); document.body.style.overflow = ''; setTimeout(z, 300) }
+        function t(event, elem) { 
+            event.stopPropagation();
+            const c = elem.nextElementSibling;
+            const wasActive = c.classList.contains('active');
+            
+            // Close all sections in current tab only
+            const currentTabContent = elem.closest('.tab-content');
+            currentTabContent.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+            currentTabContent.querySelectorAll('.section-title').forEach(t => t.classList.remove('active'));
+            
+            if (!wasActive) { 
+                c.classList.add('active'); 
+                elem.classList.add('active');
+            }
+        }
 
-        function z() { s = 1; tx = ty = 0; v() }
+        function o(t, i, j, tabId) { 
+            const items = menuData.menu[L].filter(c => c.tab === tabId);
+            let actualIndex = 0;
+            for (let k = 0; k < items.length; k++) {
+                if (k === i) break;
+                actualIndex = k;
+            }
+            const x = items[i].items[j];
+            if (!x.img) return; 
+            mi.onload = () => { 
+                mo.classList.add('active'); 
+                document.body.style.overflow = 'hidden' 
+            }; 
+            mi.src = x.img; 
+            mt.textContent = x.name; 
+            md.textContent = x.desc || ''; 
+            mp.textContent = x.price; 
+            z() 
+        }
 
-        function v() { mi.style.transform = `translate(${tx}px,${ty}px) scale(${s})` }
+        function c() { 
+            mo.classList.remove('active'); 
+            document.body.style.overflow = ''; 
+            setTimeout(z, 300) 
+        }
+
+        function z() { 
+            s = 1; 
+            tx = ty = 0; 
+            v() 
+        }
+
+        function v() { 
+            mi.style.transform = `translate(${tx}px,${ty}px) scale(${s})` 
+        }
 
         e('modalClose').addEventListener('click', c);
         mo.addEventListener('click', e => { if (e.target === mo) c() });
 
-        mi.addEventListener('mousedown', e => { if (s <= 1) return; drag = true; sx = e.clientX - tx; sy = e.clientY - ty; mi.style.cursor = 'grabbing' });
+        mi.addEventListener('mousedown', e => { 
+            if (s <= 1) return; 
+            drag = true; 
+            sx = e.clientX - tx; 
+            sy = e.clientY - ty; 
+            mi.style.cursor = 'grabbing' 
+        });
 
-        mi.addEventListener('touchstart', e => { if (e.touches.length === 2) { e.preventDefault(); const t1 = e.touches[0], t2 = e.touches[1]; td = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY) } else if (e.touches.length === 1 && s > 1) { drag = true; sx = e.touches[0].clientX - tx; sy = e.touches[0].clientY - ty } }, { passive: false });
+        mi.addEventListener('touchstart', e => { 
+            if (e.touches.length === 2) { 
+                e.preventDefault(); 
+                const t1 = e.touches[0], t2 = e.touches[1]; 
+                td = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY) 
+            } else if (e.touches.length === 1 && s > 1) { 
+                drag = true; 
+                sx = e.touches[0].clientX - tx; 
+                sy = e.touches[0].clientY - ty 
+            } 
+        }, { passive: false });
 
-        document.addEventListener('mousemove', e => { if (!drag) return; e.preventDefault(); tx = e.clientX - sx; ty = e.clientY - sy; v() });
+        document.addEventListener('mousemove', e => { 
+            if (!drag) return; 
+            e.preventDefault(); 
+            tx = e.clientX - sx; 
+            ty = e.clientY - sy; 
+            v() 
+        });
 
-        document.addEventListener('touchmove', e => { if (e.touches.length === 2) { e.preventDefault(); const t1 = e.touches[0], t2 = e.touches[1], d = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY); if (td > 0) { const delta = d - td; s = Math.max(.5, Math.min(3, s + delta * .01)); v() } td = d } else if (drag && e.touches.length === 1) { e.preventDefault(); tx = e.touches[0].clientX - sx; ty = e.touches[0].clientY - sy; v() } }, { passive: false });
+        document.addEventListener('touchmove', e => { 
+            if (e.touches.length === 2) { 
+                e.preventDefault(); 
+                const t1 = e.touches[0], t2 = e.touches[1], d = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY); 
+                if (td > 0) { 
+                    const delta = d - td; 
+                    s = Math.max(.5, Math.min(3, s + delta * .01)); 
+                    v() 
+                } 
+                td = d 
+            } else if (drag && e.touches.length === 1) { 
+                e.preventDefault(); 
+                tx = e.touches[0].clientX - sx; 
+                ty = e.touches[0].clientY - sy; 
+                v() 
+            } 
+        }, { passive: false });
 
-        document.addEventListener('mouseup', () => { drag = false; mi.style.cursor = 'grab' });
-        document.addEventListener('touchend', () => { drag = false; td = 0 });
+        document.addEventListener('mouseup', () => { 
+            drag = false; 
+            mi.style.cursor = 'grab' 
+        });
 
-        e('imageContainer').addEventListener('wheel', e => { e.preventDefault(); const delta = e.deltaY > 0 ? -.1 : .1; s = Math.max(.5, Math.min(3, s + delta)); v() }, { passive: false });
+        document.addEventListener('touchend', () => { 
+            drag = false; 
+            td = 0 
+        });
 
-        document.addEventListener('keydown', e => { if (!mo.classList.contains('active')) return; if (e.key === 'Escape') c() });
+        e('imageContainer').addEventListener('wheel', e => { 
+            e.preventDefault(); 
+            const delta = e.deltaY > 0 ? -.1 : .1; 
+            s = Math.max(.5, Math.min(3, s + delta)); 
+            v() 
+        }, { passive: false });
+
+        document.addEventListener('keydown', e => { 
+            if (!mo.classList.contains('active')) return; 
+            if (e.key === 'Escape') c() 
+        });
     </script>
 </body>
 
