@@ -1,168 +1,565 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Marina Menu | منيو مطعم مارينا</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
-        *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-        body{font-family:'Tajawal',sans-serif;background:#0a0e1a;color:#fff;min-height:100vh;overflow-x:hidden}
-        body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,rgba(16,185,129,.15) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(59,130,246,.15) 0%,transparent 50%);pointer-events:none;animation:gradientShift 15s ease infinite}
-        @keyframes gradientShift{0%,100%{opacity:1}50%{opacity:.8}}
-        .header{background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(59,130,246,.1));backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.1);text-align:center;padding:25px 20px 20px;position:sticky;top:0;z-index:100;box-shadow:0 8px 32px rgba(0,0,0,.3)}
-        .language-switcher{position:absolute;top:15px;left:20px;display:flex;gap:8px;z-index:101}
-        .lang-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#a0aec0;padding:8px 16px;border-radius:8px;font-size:.85em;font-weight:600;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px)}
-        .lang-btn.active{background:linear-gradient(135deg,#10b981,#3b82f6);color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(16,185,129,.4)}
-        .lang-btn:hover:not(.active){background:rgba(255,255,255,.15);border-color:rgba(16,185,129,.4)}
-        .restaurant-name{font-size:clamp(1.8em,5vw,2.5em);font-weight:900;margin-bottom:8px;letter-spacing:3px;background:linear-gradient(135deg,#10b981,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease-in-out infinite}
-        @keyframes shimmer{0%,100%{filter:drop-shadow(0 0 20px rgba(16,185,129,.3))}50%{filter:drop-shadow(0 0 30px rgba(59,130,246,.5))}}
-        .subtitle{font-size:.95em;color:#a0aec0;font-weight:500;letter-spacing:2px}
-        .menu-container{padding:20px 15px;position:relative;z-index:1}
-        .section{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));backdrop-filter:blur(10px);margin-bottom:20px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 32px rgba(0,0,0,.3);transition:all .3s}
-        .section:hover{border-color:rgba(16,185,129,.3);box-shadow:0 12px 40px rgba(16,185,129,.2)}
-        .section-title{font-size:clamp(1.1em,3vw,1.3em);font-weight:700;background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(59,130,246,.2));padding:18px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:all .3s;position:relative}
-        .section-title::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(59,130,246,.1));opacity:0;transition:opacity .3s}
-        .section-title:active::before{opacity:1}
-        .section-title-text{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
-        .toggle-icon{transition:transform .4s cubic-bezier(.4,0,.2,1);position:relative;z-index:1}
-        .section-title.active .toggle-icon{transform:rotate(180deg)}
-        .section-content{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
-        .section-content.active{max-height:10000px}
-        .menu-item{padding:20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .3s;position:relative;display:flex;gap:15px}
-        .menu-item::before{content:'';position:absolute;right:0;top:0;width:3px;height:100%;background:linear-gradient(180deg,#10b981,#3b82f6);opacity:0;transition:opacity .3s}
-        .menu-item:hover::before{opacity:1}
-        .menu-item:hover{background:rgba(16,185,129,.05);padding-right:25px}
-        .menu-item:last-child{border-bottom:none}
-        .item-image-wrapper{flex-shrink:0;width:80px;height:80px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(59,130,246,.1));cursor:pointer;transition:all .3s}
-        .item-image-wrapper:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(16,185,129,.3)}
-        .item-image{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-        .item-image-wrapper:hover .item-image{transform:scale(1.1)}
-        .item-content{flex:1;min-width:0}
-        .item-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:10px}
-        .item-name{font-size:1.15em;font-weight:600;line-height:1.5}
-        .item-price{font-size:1.3em;font-weight:700;background:linear-gradient(135deg,#10b981,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
-        .item-description{font-size:.9em;color:#a0aec0;line-height:1.6}
-        .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1000;opacity:0;transition:opacity .3s}
-        .modal.active{display:flex;opacity:1}
-        .modal-content{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
-        .modal-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;z-index:1002}
-        .modal-close:hover{background:rgba(239,68,68,.8);transform:rotate(90deg)}
-        .modal-image-container{position:relative;width:100%;max-width:600px;height:60vh;display:flex;align-items:center;justify-content:center;touch-action:none;margin-bottom:20px}
-        .modal-image{max-width:100%;max-height:100%;object-fit:contain;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:grab;user-select:none}
-        .modal-image:active{cursor:grabbing}
-        .modal-info{background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(59,130,246,.1));backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;max-width:600px;width:100%;text-align:center}
-        .modal-title{font-size:1.5em;font-weight:700;margin-bottom:10px;background:linear-gradient(135deg,#10b981,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .modal-description{color:#a0aec0;margin-bottom:15px;line-height:1.6}
-        .modal-price{font-size:1.8em;font-weight:700;background:linear-gradient(135deg,#10b981,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .footer{text-align:center;padding:30px 20px;color:#a0aec0;font-size:.9em;background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));backdrop-filter:blur(10px);margin-top:20px;border-radius:20px;border:1px solid rgba(255,255,255,.1)}
-        .footer p{margin:8px 0;line-height:1.6}
-        html[dir="ltr"] .language-switcher{left:auto;right:20px}
-        html[dir="ltr"] .menu-item::before{right:auto;left:0}
-        html[dir="ltr"] .menu-item:hover{padding-right:20px;padding-left:25px}
-        @media (max-width:480px){
-            .section-title{padding:16px 18px}
-            .menu-item{padding:18px}
-            .item-image-wrapper{width:70px;height:70px}
-            .modal-image-container{height:50vh}
-            .lang-btn{padding:6px 12px;font-size:.8em}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #0a0e1a;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, .15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, .15) 0%, transparent 50%);
+            pointer-events: none;
+            animation: gradientShift 15s ease infinite
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .8
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            text-align: center;
+            padding: 25px 20px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .3)
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 101
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: #a0aec0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: .85em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s;
+            backdrop-filter: blur(10px)
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, .4)
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, .15);
+            border-color: rgba(16, 185, 129, .4)
+        }
+
+        .restaurant-name {
+            font-size: clamp(1.8em, 5vw, 2.5em);
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #10b981, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 20px rgba(16, 185, 129, .3))
+            }
+
+            50% {
+                filter: drop-shadow(0 0 30px rgba(59, 130, 246, .5))
+            }
+        }
+
+        .subtitle {
+            font-size: .95em;
+            color: #a0aec0;
+            font-weight: 500;
+            letter-spacing: 2px
+        }
+
+        .menu-container {
+            padding: 20px 15px;
+            position: relative;
+            z-index: 1
+        }
+
+        .section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .3);
+            transition: all .3s
+        }
+
+        .section:hover {
+            border-color: rgba(16, 185, 129, .3);
+            box-shadow: 0 12px 40px rgba(16, 185, 129, .2)
+        }
+
+        .section-title {
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(16, 185, 129, .2), rgba(59, 130, 246, .2));
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: all .3s;
+            position: relative
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
+            opacity: 0;
+            transition: opacity .3s
+        }
+
+        .section-title:active::before {
+            opacity: 1
+        }
+
+        .section-title-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1
+        }
+
+        .toggle-icon {
+            transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+            position: relative;
+            z-index: 1
+        }
+
+        .section-title.active .toggle-icon {
+            transform: rotate(180deg)
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .section-content.active {
+            max-height: 10000px
+        }
+
+        .menu-item {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            transition: all .3s;
+            position: relative;
+            display: flex;
+            gap: 15px
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #10b981, #3b82f6);
+            opacity: 0;
+            transition: opacity .3s
+        }
+
+        .menu-item:hover::before {
+            opacity: 1
+        }
+
+        .menu-item:hover {
+            background: rgba(16, 185, 129, .05);
+            padding-right: 25px
+        }
+
+        .menu-item:last-child {
+            border-bottom: none
+        }
+
+        .item-image-wrapper {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
+            cursor: pointer;
+            transition: all .3s
+        }
+
+        .item-image-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, .3)
+        }
+
+        .item-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .3s
+        }
+
+        .item-image-wrapper:hover .item-image {
+            transform: scale(1.1)
+        }
+
+        .item-content {
+            flex: 1;
+            min-width: 0
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 10px
+        }
+
+        .item-name {
+            font-size: 1.15em;
+            font-weight: 600;
+            line-height: 1.5
+        }
+
+        .item-price {
+            font-size: 1.3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap
+        }
+
+        .item-description {
+            font-size: .9em;
+            color: #a0aec0;
+            line-height: 1.6
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .95);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity .3s
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1
+        }
+
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            z-index: 1002
+        }
+
+        .modal-close:hover {
+            background: rgba(239, 68, 68, .8);
+            transform: rotate(90deg)
+        }
+
+        .modal-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: none;
+            margin-bottom: 20px
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+            cursor: grab;
+            user-select: none
+        }
+
+        .modal-image:active {
+            cursor: grabbing
+        }
+
+        .modal-info {
+            background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center
+        }
+
+        .modal-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .modal-description {
+            color: #a0aec0;
+            margin-bottom: 15px;
+            line-height: 1.6
+        }
+
+        .modal-price {
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #a0aec0;
+            font-size: .9em;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .footer p {
+            margin: 8px 0;
+            line-height: 1.6
+        }
+
+        html[dir="ltr"] .language-switcher {
+            left: auto;
+            right: 20px
+        }
+
+        html[dir="ltr"] .menu-item::before {
+            right: auto;
+            left: 0
+        }
+
+        html[dir="ltr"] .menu-item:hover {
+            padding-right: 20px;
+            padding-left: 25px
+        }
+
+        @media (max-width:480px) {
+            .section-title {
+                padding: 16px 18px
+            }
+
+            .menu-item {
+                padding: 18px
+            }
+
+            .item-image-wrapper {
+                width: 70px;
+                height: 70px
+            }
+
+            .modal-image-container {
+                height: 50vh
+            }
+
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: .8em
+            }
         }
     </style>
 </head>
+
 <body>
-<div class="header">
-    <div class="language-switcher">
-        <button class="lang-btn active" data-lang="ar">العربية</button>
-        <button class="lang-btn" data-lang="en">English</button>
-    </div>
-    <h1 class="restaurant-name">MARINA MENU</h1>
-    <p class="subtitle" data-tr="subtitle">تجربة طعام فاخرة</p>
-</div>
-<div class="menu-container" id="menuContainer"></div>
-<div class="footer">
-    <p data-tr="footer1">جميع أطباقنا تُحضّر طازجة عند الطلب</p>
-    <p data-tr="footer2">جميع الأسعار بالدينار العراقي</p>
-    <p data-tr="footer3">فندق الانبار الدولي</p>
-</div>
-<div class="modal" id="imageModal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">&times;</button>
-        <div class="modal-image-container" id="imageContainer">
-            <img src="" alt="" class="modal-image" id="modalImage">
+    <div class="header">
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="ar">العربية</button>
+            <button class="lang-btn" data-lang="en">English</button>
         </div>
-        <div class="modal-info">
-            <h2 class="modal-title" id="modalTitle"></h2>
-            <p class="modal-description" id="modalDescription"></p>
-            <div class="modal-price" id="modalPrice"></div>
+        <h1 class="restaurant-name">MARINA MENU</h1>
+        <p class="subtitle" data-tr="subtitle">تجربة طعام فاخرة</p>
+    </div>
+    <div class="menu-container" id="menuContainer"></div>
+    <div class="footer">
+        <p data-tr="footer1">جميع أطباقنا تُحضّر طازجة عند الطلب</p>
+        <p data-tr="footer2">جميع الأسعار بالدينار العراقي</p>
+        <p data-tr="footer3">فندق الانبار الدولي</p>
+    </div>
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-image-container" id="imageContainer">
+                <img src="" alt="" class="modal-image" id="modalImage">
+            </div>
+            <div class="modal-info">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-price" id="modalPrice"></div>
+            </div>
         </div>
     </div>
-</div>
-<script>
-// تحميل البيانات من ملف JSON
-let menuData = null;
+    <script>
+        // تحميل البيانات من ملف JSON
+        let menuData = null;
 
-fetch('menu-data.json')
-    .then(response => response.json())
-    .then(data => {
-        menuData = data;
-        init();
-    })
-    .catch(error => {
-        console.error('Error loading menu data:', error);
-        alert('خطأ في تحميل بيانات المنيو');
-    });
+        fetch('menu-data.json')
+            .then(response => response.json())
+            .then(data => {
+                menuData = data;
+                init();
+            })
+            .catch(error => {
+                console.error('Error loading menu data:', error);
+                alert('خطأ في تحميل بيانات المنيو');
+            });
 
-let L='ar',s=1,tx=0,ty=0,drag=false,sx,sy,td=0;
-const e=e=>document.getElementById(e),mc=e('menuContainer'),mo=e('imageModal'),mi=e('modalImage'),mt=e('modalTitle'),md=e('modalDescription'),mp=e('modalPrice');
+        let L = 'ar', s = 1, tx = 0, ty = 0, drag = false, sx, sy, td = 0;
+        const e = e => document.getElementById(e), mc = e('menuContainer'), mo = e('imageModal'), mi = e('modalImage'), mt = e('modalTitle'), md = e('modalDescription'), mp = e('modalPrice');
 
-function init() {
-    document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{
-        L=b.dataset.lang;
-        document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
-        document.documentElement.setAttribute('lang',L);
-        document.documentElement.setAttribute('dir',L==='ar'?'rtl':'ltr');
-        r();
-        u();
-    }));
-    
-    r();
-}
+        function init() {
+            document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => {
+                L = b.dataset.lang;
+                document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
+                b.classList.add('active');
+                document.documentElement.setAttribute('lang', L);
+                document.documentElement.setAttribute('dir', L === 'ar' ? 'rtl' : 'ltr');
+                r();
+                u();
+            }));
 
-function u(){document.querySelectorAll('[data-tr]').forEach(e=>{e.textContent=menuData.translations[L][e.dataset.tr]})}
+            r();
+        }
 
-function r(){
-    mc.innerHTML=menuData.menu[L].map((c,i)=>`<div class="section"><div class="section-title" onclick="t(this)"><div class="section-title-text"><span class="category-icon">${c.icon}</span>${c.title}</div><span class="toggle-icon">▼</span></div><div class="section-content">${c.items.map((x,j)=>`<div class="menu-item">${x.img?`<div class="item-image-wrapper" onclick="o('${c.title}',${i},${j})"><img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy"></div>`:''}
-<div class="item-content"><div class="item-header"><div class="item-name">${x.name}</div><div class="item-price">${x.price}</div></div>${x.desc?`<div class="item-description">${x.desc}</div>`:''}</div></div>`).join('')}</div></div>`).join('')
-}
+        function u() { document.querySelectorAll('[data-tr]').forEach(e => { e.textContent = menuData.translations[L][e.dataset.tr] }) }
 
-function t(e){const c=e.nextElementSibling,a=c.classList.contains('active');document.querySelectorAll('.section-content').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.section-title').forEach(t=>t.classList.remove('active'));if(!a){c.classList.add('active');e.classList.add('active')}}
+        function r() {
+            mc.innerHTML = menuData.menu[L].map((c, i) => `<div class="section"><div class="section-title" onclick="t(this)"><div class="section-title-text"><span class="category-icon">${c.icon}</span>${c.title}</div><span class="toggle-icon">▼</span></div><div class="section-content">${c.items.map((x, j) => `<div class="menu-item">${x.img ? `<div class="item-image-wrapper" onclick="o('${c.title}',${i},${j})"><img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy"></div>` : ''}
+<div class="item-content"><div class="item-header"><div class="item-name">${x.name}</div><div class="item-price">${x.price}</div></div>${x.desc ? `<div class="item-description">${x.desc}</div>` : ''}</div></div>`).join('')}</div></div>`).join('')
+        }
 
-function o(t,i,j){const x=menuData.menu[L][i].items[j];if(!x.img)return;mi.onload=()=>{mo.classList.add('active');document.body.style.overflow='hidden'};mi.src=x.img;mt.textContent=x.name;md.textContent=x.desc||'';mp.textContent=x.price;z()}
+        function t(e) { const c = e.nextElementSibling, a = c.classList.contains('active'); document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active')); document.querySelectorAll('.section-title').forEach(t => t.classList.remove('active')); if (!a) { c.classList.add('active'); e.classList.add('active') } }
 
-function c(){mo.classList.remove('active');document.body.style.overflow='';setTimeout(z,300)}
+        function o(t, i, j) { const x = menuData.menu[L][i].items[j]; if (!x.img) return; mi.onload = () => { mo.classList.add('active'); document.body.style.overflow = 'hidden' }; mi.src = x.img; mt.textContent = x.name; md.textContent = x.desc || ''; mp.textContent = x.price; z() }
 
-function z(){s=1;tx=ty=0;v()}
+        function c() { mo.classList.remove('active'); document.body.style.overflow = ''; setTimeout(z, 300) }
 
-function v(){mi.style.transform=`translate(${tx}px,${ty}px) scale(${s})`}
+        function z() { s = 1; tx = ty = 0; v() }
 
-e('modalClose').addEventListener('click',c);
-mo.addEventListener('click',e=>{if(e.target===mo)c()});
+        function v() { mi.style.transform = `translate(${tx}px,${ty}px) scale(${s})` }
 
-mi.addEventListener('mousedown',e=>{if(s<=1)return;drag=true;sx=e.clientX-tx;sy=e.clientY-ty;mi.style.cursor='grabbing'});
+        e('modalClose').addEventListener('click', c);
+        mo.addEventListener('click', e => { if (e.target === mo) c() });
 
-mi.addEventListener('touchstart',e=>{if(e.touches.length===2){e.preventDefault();const t1=e.touches[0],t2=e.touches[1];td=Math.hypot(t2.clientX-t1.clientX,t2.clientY-t1.clientY)}else if(e.touches.length===1&&s>1){drag=true;sx=e.touches[0].clientX-tx;sy=e.touches[0].clientY-ty}},{passive:false});
+        mi.addEventListener('mousedown', e => { if (s <= 1) return; drag = true; sx = e.clientX - tx; sy = e.clientY - ty; mi.style.cursor = 'grabbing' });
 
-document.addEventListener('mousemove',e=>{if(!drag)return;e.preventDefault();tx=e.clientX-sx;ty=e.clientY-sy;v()});
+        mi.addEventListener('touchstart', e => { if (e.touches.length === 2) { e.preventDefault(); const t1 = e.touches[0], t2 = e.touches[1]; td = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY) } else if (e.touches.length === 1 && s > 1) { drag = true; sx = e.touches[0].clientX - tx; sy = e.touches[0].clientY - ty } }, { passive: false });
 
-document.addEventListener('touchmove',e=>{if(e.touches.length===2){e.preventDefault();const t1=e.touches[0],t2=e.touches[1],d=Math.hypot(t2.clientX-t1.clientX,t2.clientY-t1.clientY);if(td>0){const delta=d-td;s=Math.max(.5,Math.min(3,s+delta*.01));v()}td=d}else if(drag&&e.touches.length===1){e.preventDefault();tx=e.touches[0].clientX-sx;ty=e.touches[0].clientY-sy;v()}},{passive:false});
+        document.addEventListener('mousemove', e => { if (!drag) return; e.preventDefault(); tx = e.clientX - sx; ty = e.clientY - sy; v() });
 
-document.addEventListener('mouseup',()=>{drag=false;mi.style.cursor='grab'});
-document.addEventListener('touchend',()=>{drag=false;td=0});
+        document.addEventListener('touchmove', e => { if (e.touches.length === 2) { e.preventDefault(); const t1 = e.touches[0], t2 = e.touches[1], d = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY); if (td > 0) { const delta = d - td; s = Math.max(.5, Math.min(3, s + delta * .01)); v() } td = d } else if (drag && e.touches.length === 1) { e.preventDefault(); tx = e.touches[0].clientX - sx; ty = e.touches[0].clientY - sy; v() } }, { passive: false });
 
-e('imageContainer').addEventListener('wheel',e=>{e.preventDefault();const delta=e.deltaY>0?-.1:.1;s=Math.max(.5,Math.min(3,s+delta));v()},{passive:false});
+        document.addEventListener('mouseup', () => { drag = false; mi.style.cursor = 'grab' });
+        document.addEventListener('touchend', () => { drag = false; td = 0 });
 
-document.addEventListener('keydown',e=>{if(!mo.classList.contains('active'))return;if(e.key==='Escape')c()});
-</script>
+        e('imageContainer').addEventListener('wheel', e => { e.preventDefault(); const delta = e.deltaY > 0 ? -.1 : .1; s = Math.max(.5, Math.min(3, s + delta)); v() }, { passive: false });
+
+        document.addEventListener('keydown', e => { if (!mo.classList.contains('active')) return; if (e.key === 'Escape') c() });
+    </script>
 </body>
+
 </html>
