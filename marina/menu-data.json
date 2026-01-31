@@ -113,7 +113,11 @@
             "name": "طبق مشاوي مارينا",
             "desc": "كباب لحم2 كباب دجاج2 تكة لحم2 تكة دجاج2 ضلوع4 عرايس1 اجنحة",
             "price": "60,000 د.ع",
+<<<<<<< HEAD
             "img": "https://raw.githubusercontent.com/SRR3I/menu_AIH/refs/heads/main/marina/img/%D9%85%D8%B4%D8%A7%D9%88%D9%8A/1.jpeg"
+=======
+            "img": "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400"
+>>>>>>> 378453e642b3ce6b5464faee62ca5140e2d940d2
           },
           {
             "name": "عرايس لحم",
