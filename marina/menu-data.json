@@ -13,6 +13,10 @@
       "footer3": "Al Anbar International Hotel"
     }
   },
+    "logo": {
+    "url": "img/logo/logo.jpg",
+    "alt": "AIH"
+  },
   "tabs": {
     "ar": [
       { "id": "food", "name": "🍽️ الأطعمة" },

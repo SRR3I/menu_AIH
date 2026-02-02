@@ -49,15 +49,71 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, .3)
         }
 
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(16, 185, 129, .3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: conic-gradient(from 0deg, transparent, rgba(16, 185, 129, .3), transparent);
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-text {
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-image {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+        }
+
         .language-switcher {
             position: absolute;
-            top: 15px;
+            top: 20px;
             left: 20px;
             display: flex;
             gap: 6px;
             z-index: 101;
-            background: rgba(10, 14, 26, 0.6);
-            padding: 4px;
+            background: rgba(10, 14, 26, 0.7);
+            padding: 5px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, .15);
             backdrop-filter: blur(10px);
@@ -67,9 +123,9 @@
             background: transparent;
             border: none;
             color: #a0aec0;
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 8px;
-            font-size: .9em;
+            font-size: .85em;
             font-weight: 600;
             cursor: pointer;
             transition: all .3s ease;
@@ -120,6 +176,12 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            background: rgba(10, 14, 26, .95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
         }
 
         .menu-tabs::-webkit-scrollbar {
@@ -262,7 +324,8 @@
             transition: all .3s;
             position: relative;
             display: flex;
-            gap: 15px
+            gap: 15px;
+            cursor: pointer;
         }
 
         .menu-item::before {
@@ -297,11 +360,10 @@
             border-radius: 12px;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
-            cursor: pointer;
             transition: all .3s
         }
 
-        .item-image-wrapper:hover {
+        .menu-item:hover .item-image-wrapper {
             transform: scale(1.05);
             box-shadow: 0 8px 24px rgba(16, 185, 129, .3)
         }
@@ -313,7 +375,7 @@
             transition: transform .3s
         }
 
-        .item-image-wrapper:hover .item-image {
+        .menu-item:hover .item-image {
             transform: scale(1.1)
         }
 
@@ -359,12 +421,26 @@
             background: rgba(0, 0, 0, .95);
             z-index: 1000;
             opacity: 0;
-            transition: opacity .3s
+            transition: opacity .3s;
+            animation: modalFadeIn 0.3s ease forwards;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes modalFadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
 
         .modal.active {
             display: flex;
-            opacity: 1
+        }
+
+        .modal.closing {
+            animation: modalFadeOut 0.3s ease forwards;
         }
 
         .modal-content {
@@ -375,7 +451,34 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px
+            padding: 20px;
+            animation: modalContentSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes modalContentSlideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes modalContentSlideOut {
+            from { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            to { 
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+        }
+
+        .modal.closing .modal-content {
+            animation: modalContentSlideOut 0.3s ease forwards;
         }
 
         .modal-close {
@@ -400,7 +503,8 @@
 
         .modal-close:hover {
             background: rgba(239, 68, 68, .8);
-            transform: rotate(90deg)
+            transform: rotate(90deg);
+            border-color: rgba(239, 68, 68, 1);
         }
 
         .modal-image-container {
@@ -516,13 +620,22 @@
             }
 
             .lang-btn {
-                padding: 6px 14px;
-                font-size: .85em
+                padding: 6px 12px;
+                font-size: .8em
             }
 
             .tab-btn {
                 padding: 10px 20px;
                 font-size: 0.95em;
+            }
+
+            .logo-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-text {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -533,6 +646,11 @@
         <div class="language-switcher">
             <button class="lang-btn active" data-lang="ar">العربية</button>
             <button class="lang-btn" data-lang="en">English</button>
+        </div>
+        <div class="logo-container">
+            <div class="logo-circle" id="logoCircle">
+                <div class="logo-text" id="logoContent">M</div>
+            </div>
         </div>
         <h1 class="restaurant-name">MARINA MENU</h1>
         <p class="subtitle" data-tr="subtitle">تجربة طعام فاخرة</p>
@@ -586,6 +704,12 @@
               mtabs = e('menuTabs');
 
         function init() {
+            // Load logo if available
+            if (menuData.logo && menuData.logo.url && menuData.logo.url.trim() !== '') {
+                const logoContent = document.getElementById('logoContent');
+                logoContent.innerHTML = `<img src="${menuData.logo.url}" alt="${menuData.logo.alt}" class="logo-image">`;
+            }
+
             document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => {
                 L = b.dataset.lang;
                 document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
@@ -641,8 +765,8 @@
                             </div>
                             <div class="section-content">
                                 ${c.items.map((x, j) => `
-                                    <div class="menu-item">
-                                        ${x.img ? `<div class="item-image-wrapper" onclick="o('${c.title}',${i},${j},'${tab.id}')">
+                                    <div class="menu-item" onclick="o('${c.title}',${i},${j},'${tab.id}')">
+                                        ${x.img ? `<div class="item-image-wrapper">
                                             <img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy">
                                         </div>` : ''}
                                         <div class="item-content">
@@ -664,43 +788,47 @@
         function t(event, elem) { 
             event.stopPropagation();
             const c = elem.nextElementSibling;
-            const wasActive = c.classList.contains('active');
+            const isActive = c.classList.contains('active');
             
-            // Close all sections in current tab only
-            const currentTabContent = elem.closest('.tab-content');
-            currentTabContent.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
-            currentTabContent.querySelectorAll('.section-title').forEach(t => t.classList.remove('active'));
-            
-            if (!wasActive) { 
+            // Toggle only this section, don't close others
+            if (isActive) {
+                c.classList.remove('active');
+                elem.classList.remove('active');
+            } else {
                 c.classList.add('active'); 
                 elem.classList.add('active');
             }
         }
 
         function o(t, i, j, tabId) { 
+            event.stopPropagation();
             const items = menuData.menu[L].filter(c => c.tab === tabId);
-            let actualIndex = 0;
-            for (let k = 0; k < items.length; k++) {
-                if (k === i) break;
-                actualIndex = k;
-            }
             const x = items[i].items[j];
-            if (!x.img) return; 
+            
             mi.onload = () => { 
                 mo.classList.add('active'); 
                 document.body.style.overflow = 'hidden' 
             }; 
-            mi.src = x.img; 
+            mi.src = x.img || ''; 
             mt.textContent = x.name; 
             md.textContent = x.desc || ''; 
             mp.textContent = x.price; 
-            z() 
+            
+            if (!x.img) {
+                mo.classList.add('active'); 
+                document.body.style.overflow = 'hidden';
+            }
+            
+            z();
         }
 
         function c() { 
-            mo.classList.remove('active'); 
-            document.body.style.overflow = ''; 
-            setTimeout(z, 300) 
+            mo.classList.add('closing');
+            setTimeout(() => {
+                mo.classList.remove('active', 'closing'); 
+                document.body.style.overflow = '';
+                z();
+            }, 300);
         }
 
         function z() { 
@@ -713,8 +841,13 @@
             mi.style.transform = `translate(${tx}px,${ty}px) scale(${s})` 
         }
 
-        e('modalClose').addEventListener('click', c);
-        mo.addEventListener('click', e => { if (e.target === mo) c() });
+        e('modalClose').addEventListener('click', (event) => {
+            event.stopPropagation();
+            c();
+        });
+
+        // Only close on X button click, not on background click
+        // mo.addEventListener('click', e => { if (e.target === mo) c() });
 
         mi.addEventListener('mousedown', e => { 
             if (s <= 1) return; 
