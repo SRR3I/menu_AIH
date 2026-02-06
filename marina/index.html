@@ -19,7 +19,9 @@
             background: #0a0e1a;
             color: #fff;
             min-height: 100vh;
-            overflow-x: hidden
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body::before {
@@ -28,31 +30,27 @@
             inset: 0;
             background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, .15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, .15) 0%, transparent 50%);
             pointer-events: none;
-            animation: gradientShift 15s ease infinite
+            opacity: 0.9;
         }
 
-        @keyframes gradientShift {
-            0%, 100% { opacity: 1 }
-            50% { opacity: .8 }
-        }
-
-        /* تصميم الهيدر المصغّر والفخم */
+        /* تصميم الهيدر - backdrop-filter فقط هنا */
         .header {
             background: linear-gradient(135deg, rgba(10, 14, 26, 0.98), rgba(16, 185, 129, .08), rgba(59, 130, 246, .08));
-            backdrop-filter: blur(30px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 2px solid rgba(16, 185, 129, .2);
             padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, .5), 0 0 40px rgba(16, 185, 129, .15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .5);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 20px;
         }
 
-        /* تصميم اللوغو الفخم */
+        /* تصميم اللوغو - تبسيط الأنيميشن */
         .logo-container {
             width: 85px;
             height: 85px;
@@ -68,7 +66,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background: linear-gradient(135deg, rgba(16, 185, 129, .15), rgba(59, 130, 246, .15));
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(16, 185, 129, .15), rgba(59, 130, 246, .15));
             padding: 4px;
             animation: logoGlow 3s ease-in-out infinite;
         }
@@ -97,14 +95,13 @@
             border-radius: 50%;
             position: relative;
             z-index: 1;
-            border: 3px solid rgba(16, 185, 129, .3);
+            border: 2px solid rgba(16, 185, 129, .4);
             box-shadow: 
-                0 4px 20px rgba(0, 0, 0, .4),
-                0 0 30px rgba(16, 185, 129, .2),
-                inset 0 0 20px rgba(255, 255, 255, .05);
+                0 4px 20px rgba(0, 0, 0, .6),
+                inset 0 0 20px rgba(0, 0, 0, .3);
         }
 
-        /* حلقات ديكورية حول اللوغو */
+        /* حلقات ديكورية حول اللوغو - إعادة الدوران */
         .logo-circle::before,
         .logo-circle::after {
             content: '';
@@ -137,6 +134,12 @@
         .header-info {
             flex: 1;
             text-align: center;
+            margin-left: 85px;
+        }
+        
+        html[dir="ltr"] .header-info {
+            margin-left: 0;
+            margin-right: 85px;
         }
 
         .restaurant-name {
@@ -148,20 +151,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(16, 185, 129, .3);
-            animation: shimmer 3s ease-in-out infinite;
             line-height: 1.2;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { 
-                filter: drop-shadow(0 0 15px rgba(16, 185, 129, .4));
-                transform: scale(1);
-            }
-            50% { 
-                filter: drop-shadow(0 0 25px rgba(59, 130, 246, .6));
-                transform: scale(1.02);
-            }
         }
 
         .subtitle {
@@ -182,56 +172,37 @@
         }
 
         .burger-icon {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: rgba(10, 14, 26, 0.9);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(16, 185, 129, .3);
             border-radius: 50%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
             cursor: pointer;
             transition: all .3s ease;
-            padding: 8px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, .3);
+            font-size: 20px;
         }
 
         .burger-icon:hover {
             background: rgba(16, 185, 129, 0.2);
             border-color: rgba(16, 185, 129, .5);
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        .language-menu.open .burger-icon {
+            background: rgba(16, 185, 129, 0.25);
+            border-color: rgba(16, 185, 129, .6);
             transform: scale(1.05);
-        }
-
-        .burger-line {
-            width: 16px;
-            height: 2px;
-            background: linear-gradient(135deg, #10b981, #3b82f6);
-            border-radius: 2px;
-            transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .language-menu.open .burger-line:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-
-        .language-menu.open .burger-line:nth-child(2) {
-            opacity: 0;
-            transform: translateX(-10px);
-        }
-
-        .language-menu.open .burger-line:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
         }
 
         .language-dropdown {
             position: absolute;
-            top: 45px;
+            top: 50px;
             left: 0;
             background: rgba(10, 14, 26, 0.95);
-            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, .15);
             border-radius: 16px;
             overflow: hidden;
@@ -240,7 +211,7 @@
             transform: translateY(-10px) scale(0.95);
             transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
-            min-width: 140px;
+            min-width: 160px;
         }
 
         .language-menu.open .language-dropdown {
@@ -250,12 +221,12 @@
         }
 
         .lang-option {
-            padding: 12px 20px;
+            padding: 14px 20px;
             cursor: pointer;
             transition: all .3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 0.95em;
             font-weight: 600;
             color: #a0aec0;
@@ -296,12 +267,14 @@
         }
 
         .lang-icon {
-            font-size: 1.2em;
+            font-size: 1.3em;
             position: relative;
             z-index: 1;
+            min-width: 24px;
+            text-align: center;
         }
 
-        /* Menu Tabs */
+        /* Menu Tabs - تنسيق مع الهيدر */
         .menu-tabs {
             display: flex;
             gap: 10px;
@@ -310,11 +283,13 @@
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
             position: sticky;
-            top: 0;
+            top: 114px;
             z-index: 99;
-            background: rgba(10, 14, 26, .95);
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.98), rgba(16, 185, 129, .08), rgba(59, 130, 246, .08));
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, .05);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 2px solid rgba(16, 185, 129, .2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .5);
         }
 
         .menu-tabs::-webkit-scrollbar {
@@ -334,8 +309,7 @@
         .tab-btn {
             flex-shrink: 0;
             padding: 10px 20px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, .05);
             border: 1px solid rgba(255, 255, 255, .1);
             border-radius: 12px;
             color: #a0aec0;
@@ -355,7 +329,7 @@
         }
 
         .tab-btn:hover:not(.active) {
-            background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .05));
+            background: rgba(255, 255, 255, .08);
             border-color: rgba(16, 185, 129, .2);
             color: #fff;
         }
@@ -380,16 +354,17 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Section - إزالة backdrop-filter واستخدام خلفية rgba ثابتة */
         .section {
-            background: linear-gradient(135deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
-            backdrop-filter: blur(10px);
+            background: rgba(20, 24, 40, 0.6);
             margin-bottom: 20px;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, .1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, .3);
             transition: all .3s;
-            transform: translateZ(0);
+            contain: layout style paint;
+            content-visibility: auto;
         }
 
         .section:hover {
@@ -433,7 +408,7 @@
         }
 
         .toggle-icon {
-            transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+            transition: transform .3s ease;
             position: relative;
             z-index: 1
         }
@@ -442,25 +417,27 @@
             transform: rotate(180deg)
         }
 
+        /* تحسين أداء فتح الأقسام - استخدام height بدلاً من max-height */
         .section-content {
-            max-height: 0;
             overflow: hidden;
-            transition: max-height .4s cubic-bezier(.4, 0, .2, 1)
+            height: 0;
+            transition: height .3s ease;
         }
 
         .section-content.active {
-            max-height: 10000px
+            height: auto;
         }
 
+        /* Menu Item - إزالة backdrop-filter وتبسيط التأثيرات */
         .menu-item {
             padding: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, .05);
-            transition: all .3s;
+            transition: background .2s ease, padding .2s ease;
             position: relative;
             display: flex;
             gap: 15px;
             cursor: pointer;
-            transform: translateZ(0);
+            contain: layout style paint;
         }
 
         .menu-item::before {
@@ -495,22 +472,24 @@
             border-radius: 12px;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
-            transition: all .3s;
-            will-change: transform;
+            transition: transform .2s ease;
+            contain: strict;
         }
 
         .menu-item:hover .item-image-wrapper {
             transform: scale(1.05);
-            box-shadow: 0 8px 24px rgba(16, 185, 129, .3)
         }
 
+        /* تحسين أداء الصور */
         .item-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform .3s;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            transition: transform .2s ease;
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
         .menu-item:hover .item-image {
@@ -627,7 +606,6 @@
             height: 44px;
             border-radius: 50%;
             background: rgba(255, 255, 255, .1);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, .2);
             color: #fff;
             font-size: 24px;
@@ -673,8 +651,7 @@
         }
 
         .modal-info {
-            background: linear-gradient(135deg, rgba(16, 185, 129, .1), rgba(59, 130, 246, .1));
-            backdrop-filter: blur(20px);
+            background: rgba(20, 24, 40, 0.9);
             border: 1px solid rgba(255, 255, 255, .1);
             border-radius: 16px;
             padding: 20px;
@@ -713,8 +690,7 @@
             padding: 30px 20px;
             color: #a0aec0;
             font-size: .9em;
-            background: linear-gradient(135deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
-            backdrop-filter: blur(10px);
+            background: rgba(20, 24, 40, 0.6);
             margin-top: 20px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, .1)
@@ -755,6 +731,15 @@
                 height: 70px;
             }
 
+            .header-info {
+                margin-left: 70px;
+            }
+            
+            html[dir="ltr"] .header-info {
+                margin-left: 0;
+                margin-right: 70px;
+            }
+
             .restaurant-name {
                 font-size: clamp(1.2em, 4vw, 1.5em);
                 letter-spacing: 2px;
@@ -787,12 +772,8 @@
             }
 
             .burger-icon {
-                width: 32px;
-                height: 32px;
-            }
-
-            .burger-line {
-                width: 14px;
+                width: 36px;
+                height: 36px;
             }
 
             .language-menu {
@@ -803,6 +784,10 @@
             html[dir="ltr"] .language-menu {
                 right: 12px;
             }
+
+            .menu-tabs {
+                top: 94px;
+            }
         }
     </style>
 </head>
@@ -811,15 +796,15 @@
     <div class="header" id="mainHeader">
         <div class="language-menu" id="languageMenu">
             <div class="burger-icon" id="burgerIcon">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
+                🌐
             </div>
             <div class="language-dropdown">
                 <div class="lang-option active" data-lang="ar">
+                    <span class="lang-icon">ع</span>
                     <span>العربية</span>
                 </div>
                 <div class="lang-option" data-lang="en">
+                    <span class="lang-icon">En</span>
                     <span>English</span>
                 </div>
             </div>
@@ -936,6 +921,17 @@
             
             // Handle browser back button
             window.addEventListener('popstate', handleBackButton);
+            
+            // تحسين scroll performance
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
         }
 
         function renderTabs() {
@@ -966,49 +962,90 @@
 
         function r() {
             const tabs = menuData.tabs[L];
-            mc.innerHTML = tabs.map((tab, tabIdx) => `
-                <div class="tab-content ${tabIdx === 0 ? 'active' : ''}" data-tab-content="${tab.id}">
-                    ${menuData.menu[L].filter(c => c.tab === tab.id).map((c, i) => `
-                        <div class="section">
-                            <div class="section-title" onclick="t(event, this)">
-                                <div class="section-title-text">
-                                    <span class="category-icon">${c.icon}</span>${c.title}
-                                </div>
-                                <span class="toggle-icon">▼</span>
+            
+            // استخدام requestAnimationFrame لتحسين الأداء
+            requestAnimationFrame(() => {
+                // استخدام DocumentFragment لتحسين الأداء
+                const fragment = document.createDocumentFragment();
+                
+                tabs.forEach((tab, tabIdx) => {
+                    const tabDiv = document.createElement('div');
+                    tabDiv.className = `tab-content ${tabIdx === 0 ? 'active' : ''}`;
+                    tabDiv.setAttribute('data-tab-content', tab.id);
+                    
+                    const sections = menuData.menu[L].filter(c => c.tab === tab.id);
+                    
+                    sections.forEach((c, i) => {
+                        const sectionDiv = document.createElement('div');
+                        sectionDiv.className = 'section';
+                        
+                        const titleDiv = document.createElement('div');
+                        titleDiv.className = 'section-title';
+                        titleDiv.innerHTML = `
+                            <div class="section-title-text">
+                                <span class="category-icon">${c.icon}</span>${c.title}
                             </div>
-                            <div class="section-content">
-                                ${c.items.map((x, j) => `
-                                    <div class="menu-item" onclick="o('${c.title}',${i},${j},'${tab.id}')">
-                                        ${x.img ? `<div class="item-image-wrapper">
-                                            <img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy">
-                                        </div>` : ''}
-                                        <div class="item-content">
-                                            <div class="item-header">
-                                                <div class="item-name">${x.name}</div>
-                                                <div class="item-price">${x.price}</div>
-                                            </div>
-                                            ${x.desc ? `<div class="item-description">${x.desc}</div>` : ''}
-                                        </div>
+                            <span class="toggle-icon">▼</span>
+                        `;
+                        
+                        const contentDiv = document.createElement('div');
+                        contentDiv.className = 'section-content';
+                        
+                        c.items.forEach((x, j) => {
+                            const itemDiv = document.createElement('div');
+                            itemDiv.className = 'menu-item';
+                            itemDiv.innerHTML = `
+                                ${x.img ? `<div class="item-image-wrapper">
+                                    <img src="${x.img}" alt="${x.name}" class="item-image" loading="lazy" decoding="async">
+                                </div>` : ''}
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <div class="item-name">${x.name}</div>
+                                        <div class="item-price">${x.price}</div>
                                     </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `).join('');
+                                    ${x.desc ? `<div class="item-description">${x.desc}</div>` : ''}
+                                </div>
+                            `;
+                            itemDiv.addEventListener('click', () => o(c.title, i, j, tab.id), { passive: true });
+                            contentDiv.appendChild(itemDiv);
+                        });
+                        
+                        titleDiv.addEventListener('click', (event) => t(event, titleDiv));
+                        sectionDiv.appendChild(titleDiv);
+                        sectionDiv.appendChild(contentDiv);
+                        tabDiv.appendChild(sectionDiv);
+                    });
+                    
+                    fragment.appendChild(tabDiv);
+                });
+                
+                mc.innerHTML = '';
+                mc.appendChild(fragment);
+            });
         }
 
+        // تحسين دالة فتح الأقسام باستخدام scrollHeight
         function t(event, elem) { 
             event.stopPropagation();
             const c = elem.nextElementSibling;
             const isActive = c.classList.contains('active');
             
             if (isActive) {
+                c.style.height = '0px';
                 c.classList.remove('active');
                 elem.classList.remove('active');
             } else {
+                const height = c.scrollHeight;
+                c.style.height = height + 'px';
                 c.classList.add('active'); 
                 elem.classList.add('active');
+                
+                // إزالة الارتفاع بعد انتهاء الأنيميشن للسماح بالتوسع التلقائي
+                setTimeout(() => {
+                    if (c.classList.contains('active')) {
+                        c.style.height = 'auto';
+                    }
+                }, 300);
             }
         }
 
